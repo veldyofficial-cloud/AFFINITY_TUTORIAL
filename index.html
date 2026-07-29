@@ -16264,18 +16264,33 @@ pointer-events:none;
 #af-tutorial .af-praise-letter,
 .af-praise-letter{
 display:inline-block;
-color:hsl(var(--h),96%,62%);
--webkit-text-fill-color:hsl(var(--h),96%,62%);
--webkit-text-stroke:2.4px rgba(255,255,255,.98);
-paint-order:stroke fill;
+position:relative;
+color:hsl(var(--h),96%,58%);
+background:linear-gradient(180deg,
+hsl(var(--h),100%,88%) 0%,
+hsl(var(--h),98%,69%) 27%,
+hsl(var(--h),95%,57%) 57%,
+hsl(var(--h),88%,41%) 100%);
+-webkit-background-clip:text;
+background-clip:text;
+-webkit-text-fill-color:transparent;
+-webkit-text-stroke:0 transparent;
+paint-order:fill;
 text-shadow:
-0 2px 0 rgba(15,23,42,.45),
-0 0 5px rgba(255,255,255,.98),
-0 0 14px currentColor,
-0 0 28px currentColor,
-0 0 44px currentColor;
-filter:drop-shadow(0 6px 2px rgba(15,23,42,.22));
-transform-origin:50% 75%;
+0 1px 0 hsl(var(--h),82%,43%),
+0 2px 0 hsl(var(--h),82%,40%),
+0 3px 0 hsl(var(--h),82%,37%),
+0 4px 0 hsl(var(--h),82%,34%),
+0 5px 0 hsl(var(--h),82%,31%),
+0 6px 0 hsl(var(--h),82%,28%),
+0 9px 4px rgba(15,23,42,.30),
+0 15px 13px rgba(15,23,42,.22),
+0 0 15px hsla(var(--h),96%,62%,.86),
+0 0 30px hsla(var(--h),96%,62%,.58);
+filter:saturate(1.08) drop-shadow(0 5px 1px rgba(15,23,42,.16));
+transform-origin:50% 78%;
+transform-style:preserve-3d;
+backface-visibility:hidden;
 will-change:transform,filter;
 }
 #af-tutorial .af-final-win.show .af-praise-letter,
@@ -16342,10 +16357,10 @@ animation:afFWRing .86s ease-out var(--d,0s) forwards;
 100%{opacity:0;transform:translate(-50%,-74%) scale(1.24) rotate(0deg);filter:brightness(1.2) saturate(1.25)}
 }
 @keyframes afPraiseLetter{
-0%{transform:translateY(34px) scale(.15) rotate(-18deg)}
-55%{transform:translateY(-8px) scale(1.24) rotate(6deg)}
-78%{transform:translateY(2px) scale(.95) rotate(-2deg)}
-100%{transform:translateY(0) scale(1) rotate(0deg)}
+0%{transform:perspective(820px) translateY(38px) translateZ(-90px) scale(.15) rotate(-18deg) rotateX(-68deg) rotateY(-12deg)}
+55%{transform:perspective(820px) translateY(-9px) translateZ(34px) scale(1.24) rotate(6deg) rotateX(10deg) rotateY(5deg)}
+78%{transform:perspective(820px) translateY(2px) translateZ(-8px) scale(.95) rotate(-2deg) rotateX(-4deg) rotateY(-2deg)}
+100%{transform:perspective(820px) translateY(0) translateZ(0) scale(1) rotate(0deg) rotateX(0deg) rotateY(0deg)}
 }
 @keyframes afPraiseShimmer{
 from{filter:brightness(1) saturate(1) drop-shadow(0 6px 2px rgba(15,23,42,.22))}
@@ -16761,7 +16776,7 @@ afV110RefreshControls();
 })();
 
 
-/* v117: faint silhouette guides + transparent firework praise text */
+/* v118: faint silhouette guides + borderless 3D firework praise text */
 /* v114: high-DPI anti-aliased colour wheel renderer */
 (function(){
 if(!wheelCanvas)return;
