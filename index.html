@@ -16056,7 +16056,7 @@ try{
 const colors=['#F4C16D','#86C8EE','#EE91B1','#B9A4E8','#93D9B4','#F0A980','#D79AC9','#F5DE8E'];
 const origins=[[-150,-22],[150,-18],[-72,34],[72,38],[0,-62]];
 document.querySelectorAll('.af-fw,.af-fw-ring').forEach(e=>e.remove());
-const total=Math.max(90,Math.round(c*1.35));
+const total=Math.max(42,Math.round(c*.58));
 for(let j=0;j<total;j++){
 const f=document.createElement('i');
 const oi=j%origins.length;
@@ -16081,9 +16081,9 @@ document.body.appendChild(f);
 setTimeout(()=>f.remove(),1550);
 }
 // A second, very short outward snap makes the explosion feel like a real "pop" without circular rings.
-for(let k=0;k<34;k++){
+for(let k=0;k<18;k++){
 const f=document.createElement('i');
-const q=(Math.PI*2*k/34)+(Math.random()-.5)*.12;
+const q=(Math.PI*2*k/18)+(Math.random()-.5)*.12;
 const power=b*(.42+Math.random()*.34);
 f.className='af-fw flash '+(k%3===0?'star':'bar');
 f.style.setProperty('--ox','0px');
@@ -16135,10 +16135,10 @@ let i=Math.floor(Math.random()*S.length);
 if(S.length>1&&i===last)i=(i+1)%S.length;
 last=i;
 let a=S[i],t=++okn;
-lock=n+3300;
+lock=n+2450;
 paintPraise(a.label,false);
-burst(92,172);
-setTimeout(()=>{if(t===okn&&ok.el)ok.el.classList.remove('show')},1900);
+setTimeout(()=>burst(92,172),220);
+setTimeout(()=>{if(t===okn&&ok.el)window.afPraiseExitBurst(ok.el)},1180);
 try{
 stopA();
 let v=new Audio(a.src);
@@ -16151,10 +16151,10 @@ function done(){
 try{speechSynthesis&&speechSynthesis.cancel&&speechSynthesis.cancel()}catch(e){}
 oldOff();
 let t=++okn;
-lock=Date.now()+5200;
+lock=Date.now()+3400;
 paintPraise('미션 완료!',true);
-burst(132,205);
-setTimeout(()=>{if(t===okn&&ok.el)ok.el.classList.remove('show')},2700);
+setTimeout(()=>burst(132,205),260);
+setTimeout(()=>{if(t===okn&&ok.el)window.afPraiseExitBurst(ok.el)},1480);
 try{
 stopA();
 let v=new Audio(F);
@@ -16216,7 +16216,7 @@ visibility:hidden!important;
 position:fixed;
 left:50%;
 top:50%;
-transform:translate(-50%,-50%) scale(.06) rotate(-10deg);
+transform:translate(-50%,-50%) scale(.06);
 transform-origin:center center;
 opacity:0;
 z-index:6200;
@@ -16232,7 +16232,7 @@ font-family:"LaundryGothic",sans-serif!important;
 font-size:clamp(58px,8vw,112px);
 font-weight:400!important;
 line-height:1!important;
-letter-spacing:.015em;
+letter-spacing:-.025em;
 white-space:nowrap;
 text-align:center;
 isolation:isolate;
@@ -16242,10 +16242,10 @@ will-change:transform,opacity,filter;
 .af-final-win.complete{font-size:clamp(50px,7vw,98px)}
 #af-tutorial .af-final-win.show,
 .af-final-win.show{
-animation:afPraisePop 1.82s cubic-bezier(.14,.82,.18,1) both;
+animation:afPraisePop 2.32s cubic-bezier(.16,.84,.2,1) both;
 }
 #af-tutorial .af-final-win.complete.show,
-.af-final-win.complete.show{animation-duration:2.5s}
+.af-final-win.complete.show{animation-duration:2.72s}
 
 #af-tutorial .af-final-win::before,
 .af-final-win::before{
@@ -16283,29 +16283,29 @@ display:none!important;
 .af-praise-letter{
 display:inline-block;
 position:relative;
-color:hsl(var(--h),72%,64%);
+color:hsl(var(--h),78%,72%);
 background:linear-gradient(180deg,
-hsl(var(--h),74%,92%) 0%,
-hsl(var(--h),73%,80%) 27%,
-hsl(var(--h),72%,69%) 57%,
-hsl(var(--h),68%,58%) 100%);
+hsl(var(--h),88%,96%) 0%,
+hsl(var(--h),84%,88%) 24%,
+hsl(var(--h),82%,78%) 56%,
+hsl(var(--h),76%,66%) 100%);
 -webkit-background-clip:text;
 background-clip:text;
 -webkit-text-fill-color:transparent;
 -webkit-text-stroke:0 transparent;
 paint-order:fill;
 text-shadow:
-0 1px 0 hsl(var(--h),62%,58%),
-0 2px 0 hsl(var(--h),62%,55%),
-0 3px 0 hsl(var(--h),61%,52%),
-0 4px 0 hsl(var(--h),60%,49%),
-0 5px 0 hsl(var(--h),59%,46%),
-0 6px 0 hsl(var(--h),58%,43%),
-0 9px 4px rgba(15,23,42,.22),
-0 15px 13px rgba(15,23,42,.16),
-0 0 15px hsla(var(--h),76%,70%,.58),
-0 0 30px hsla(var(--h),74%,68%,.30);
-filter:saturate(.92) drop-shadow(0 5px 1px rgba(15,23,42,.12));
+0 1px 0 hsl(var(--h),70%,64%),
+0 2px 0 hsl(var(--h),69%,61%),
+0 3px 0 hsl(var(--h),68%,58%),
+0 4px 0 hsl(var(--h),67%,55%),
+0 5px 0 hsl(var(--h),66%,52%),
+0 6px 0 hsl(var(--h),65%,49%),
+0 9px 4px rgba(15,23,42,.18),
+0 14px 12px rgba(15,23,42,.13),
+0 0 18px hsla(var(--h),88%,80%,.60),
+0 0 34px hsla(var(--h),84%,76%,.34);
+filter:saturate(1.02) brightness(1.06) drop-shadow(0 5px 1px rgba(15,23,42,.10));
 transform-origin:50% 78%;
 transform-style:preserve-3d;
 backface-visibility:hidden;
@@ -16314,8 +16314,8 @@ will-change:transform,filter;
 #af-tutorial .af-final-win.show .af-praise-letter,
 .af-final-win.show .af-praise-letter{
 animation:
-afPraiseLetter .72s cubic-bezier(.13,1.35,.22,1) calc(var(--i)*.025s) both,
-afPraiseShimmer .3s ease-in-out calc(.18s + var(--i)*.025s) 3 alternate;
+afPraiseLetter .88s cubic-bezier(.2,1.18,.24,1) .045s both,
+afPraiseShimmer .38s ease-in-out .34s 2 alternate;
 }
 
 #af-tutorial .af-fw,
@@ -16363,24 +16363,26 @@ clip-path:polygon(50% 0,61% 36%,100% 50%,61% 64%,50% 100%,39% 64%,0 50%,39% 36%)
 .af-fw-ring{display:none!important;}
 
 @keyframes afPraisePop{
-0%{opacity:0;transform:translate(-50%,-50%) scale(.015) rotate(-14deg);filter:brightness(1.12) saturate(1.04)}
-6%{opacity:1;transform:translate(-50%,-50%) scale(1.68) rotate(5deg);filter:brightness(1.08) saturate(1.03)}
-15%{opacity:1;transform:translate(-50%,-50%) scale(.78) rotate(-3deg)}
-25%{opacity:1;transform:translate(-50%,-50%) scale(1.19) rotate(1.5deg)}
-35%{opacity:1;transform:translate(-50%,-50%) scale(.96) rotate(-.5deg)}
-45%{opacity:1;transform:translate(-50%,-50%) scale(1.04) rotate(0deg)}
-72%{opacity:1;transform:translate(-50%,-52%) scale(1.04) rotate(0deg)}
-100%{opacity:0;transform:translate(-50%,-76%) scale(1.28) rotate(0deg);filter:brightness(1) saturate(1)}
+0%{opacity:0;transform:translate(-50%,-50%) scale3d(.16,.16,1);filter:brightness(1.12) saturate(1.04)}
+12%{opacity:1;transform:translate(-50%,-50%) scale3d(.52,.52,1);filter:brightness(1.10) saturate(1.03)}
+30%{opacity:1;transform:translate(-50%,-50%) scale3d(1.24,1.24,1);filter:brightness(1.05) saturate(1.02)}
+44%{opacity:1;transform:translate(-50%,-50%) scale3d(.92,.92,1)}
+56%{opacity:1;transform:translate(-50%,-50%) scale3d(1.08,1.08,1)}
+68%{opacity:1;transform:translate(-50%,-50%) scale3d(.98,.98,1)}
+82%{opacity:1;transform:translate(-50%,-50%) scale3d(1.02,1.02,1);filter:brightness(1.02) saturate(1.01)}
+100%{opacity:0;transform:translate(-50%,-50%) scale3d(1.05,1.05,1);filter:brightness(1) saturate(1)}
 }
 @keyframes afPraiseLetter{
-0%{transform:perspective(820px) translateY(38px) translateZ(-90px) scale(.15) rotate(-18deg) rotateX(-68deg) rotateY(-12deg)}
-55%{transform:perspective(820px) translateY(-9px) translateZ(34px) scale(1.24) rotate(6deg) rotateX(10deg) rotateY(5deg)}
-78%{transform:perspective(820px) translateY(2px) translateZ(-8px) scale(.95) rotate(-2deg) rotateX(-4deg) rotateY(-2deg)}
-100%{transform:perspective(820px) translateY(0) translateZ(0) scale(1) rotate(0deg) rotateX(0deg) rotateY(0deg)}
+0%{transform:scale3d(.24,.24,1)}
+22%{transform:scale3d(.78,.78,1)}
+52%{transform:scale3d(1.18,1.18,1)}
+72%{transform:scale3d(.95,.95,1)}
+86%{transform:scale3d(1.04,1.04,1)}
+100%{transform:scale3d(1,1,1)}
 }
 @keyframes afPraiseShimmer{
-from{filter:brightness(1) saturate(.90) drop-shadow(0 6px 2px rgba(15,23,42,.14))}
-to{filter:brightness(1) saturate(1.00) drop-shadow(0 6px 2px rgba(15,23,42,.14))}
+from{filter:brightness(1.03) saturate(1.00) drop-shadow(0 6px 2px rgba(15,23,42,.12))}
+to{filter:brightness(1.10) saturate(1.08) drop-shadow(0 6px 2px rgba(15,23,42,.12))}
 }
 @keyframes afPraiseRays{
 0%{opacity:0;transform:translate(-50%,-50%) scale(.08) rotate(-18deg)}
@@ -17700,3 +17702,551 @@ try{showGuide('bunny');styleSilhouetteGuide();}catch(e){}
   setTimeout(rerender, 260);
 })();
 </script>
+
+<style>
+/* Top mission spacing refinement */
+#af-tutorial .af-topbar{
+  column-gap:20px !important;
+}
+#af-tutorial .af-mission-top{
+  width:calc(100% - 22px) !important;
+  max-width:calc(100% - 22px) !important;
+  justify-self:start !important;
+  margin-left:0 !important;
+  margin-right:22px !important;
+}
+@media(max-width:980px){
+  #af-tutorial .af-topbar{column-gap:14px !important;}
+  #af-tutorial .af-mission-top{
+    width:calc(100% - 14px) !important;
+    max-width:calc(100% - 14px) !important;
+    margin-right:14px !important;
+  }
+}
+</style>
+
+
+/* AF_SMOOTH_PRAISE_MOTION_V1 */
+<style id="afSmoothPraiseMotionV1">
+/* Keep the same elastic pop, but move only compositor-friendly properties. */
+#af-tutorial .af-final-win,
+.af-final-win{
+  transform:translate3d(-50%,-50%,0) scale(.04);
+  transform-origin:50% 50%;
+  backface-visibility:hidden;
+  perspective:1000px;
+  filter:none!important;
+  will-change:transform,opacity!important;
+  contain:layout style paint;
+}
+#af-tutorial .af-final-win.show,
+.af-final-win.show{
+  animation:afPraisePopSmooth 2.96s cubic-bezier(.18,.82,.18,1) both!important;
+}
+#af-tutorial .af-final-win.complete.show,
+.af-final-win.complete.show{
+  animation-duration:3.24s!important;
+}
+
+/* The whole word now supplies the bounce; letters no longer run competing 3D/filter animations. */
+#af-tutorial .af-praise-letter,
+.af-praise-letter{
+  transform:none!important;
+  filter:none!important;
+  backface-visibility:hidden;
+  will-change:auto!important;
+}
+#af-tutorial .af-final-win.show .af-praise-letter,
+.af-final-win.show .af-praise-letter{
+  animation:none!important;
+}
+
+#af-tutorial .af-final-win.show::before,
+.af-final-win.show::before{
+  animation:afPraiseRaysSmooth 1.05s cubic-bezier(.16,.72,.18,1) .08s both!important;
+  will-change:transform,opacity;
+}
+
+/* Fewer, lighter particles avoid frame drops while preserving the pop. */
+#af-tutorial .af-fw,
+.af-fw{
+  filter:none!important;
+  box-shadow:0 0 5px var(--c),0 0 10px var(--c)!important;
+  will-change:transform,opacity!important;
+  contain:layout style paint;
+}
+#af-tutorial .af-fw.flash,
+.af-fw.flash{
+  filter:none!important;
+  box-shadow:0 0 7px var(--c),0 0 14px var(--c)!important;
+}
+
+@keyframes afPraisePopSmooth{
+  0%{
+    opacity:0;
+    transform:translate3d(-50%,-50%,0) scale(.045,.045);
+  }
+  8%{
+    opacity:1;
+    transform:translate3d(-50%,-50%,0) scale(.16,.13);
+  }
+  22%{
+    opacity:1;
+    transform:translate3d(-50%,-50%,0) scale(1.34,.87);
+  }
+  32%{
+    transform:translate3d(-50%,-50%,0) scale(.91,1.11);
+  }
+  41%{
+    transform:translate3d(-50%,-50%,0) scale(1.075,.955);
+  }
+  49%{
+    transform:translate3d(-50%,-50%,0) scale(.975,1.035);
+  }
+  57%{
+    transform:translate3d(-50%,-50%,0) scale(1.018,.99);
+  }
+  65%{
+    transform:translate3d(-50%,-50%,0) scale(.995,1.005);
+  }
+  72%,86%{
+    opacity:1;
+    transform:translate3d(-50%,-50%,0) scale(1,1);
+  }
+  100%{
+    opacity:0;
+    transform:translate3d(-50%,-50%,0) scale(1.025,1.025);
+  }
+}
+
+@keyframes afPraiseRaysSmooth{
+  0%{
+    opacity:0;
+    transform:translate3d(-50%,-50%,0) scale(.12) rotate(-14deg);
+  }
+  20%{opacity:.88}
+  100%{
+    opacity:0;
+    transform:translate3d(-50%,-50%,0) scale(1.04) rotate(14deg);
+  }
+}
+
+@keyframes afFWSpark{
+  0%{
+    opacity:0;
+    transform:translate3d(-50%,-50%,0) translate3d(0,0,0) rotate(var(--r,0deg)) scale(.12);
+  }
+  8%{
+    opacity:1;
+    transform:translate3d(-50%,-50%,0) translate3d(0,0,0) rotate(var(--r,0deg)) scale(1.22);
+  }
+  22%{
+    opacity:1;
+    transform:translate3d(-50%,-50%,0) translate3d(var(--mx),var(--my),0) rotate(calc(var(--r,0deg) + 20deg)) scale(1);
+  }
+  70%{opacity:.82}
+  100%{
+    opacity:0;
+    transform:translate3d(-50%,-50%,0) translate3d(var(--x),var(--y),0) rotate(calc(var(--r,0deg) + 190deg)) scale(.08);
+  }
+}
+</style>
+
+<style>
+/* AF_RESIZE_ONLY_FINAL_V122 */
+#af-tutorial .af-ultimate-artboard-box,
+#af-tutorial .af-artboard-transform-v51,
+#af-tutorial .af-artboard-transform {
+  display:none !important;
+  visibility:hidden !important;
+  pointer-events:none !important;
+}
+#af-tutorial .af-artboard-resize-box-v122{
+  position:absolute;
+  z-index:12000;
+  display:none;
+  border:2px solid #18c7e6;
+  box-shadow:0 0 0 1px rgba(255,255,255,.9);
+  pointer-events:none;
+}
+#af-tutorial .af-artboard-resize-box-v122.show{display:block !important;}
+#af-tutorial .af-artboard-resize-handle-v122{
+  position:absolute;
+  width:14px;
+  height:14px;
+  border:2px solid #18c7e6;
+  border-radius:3px;
+  background:#fff;
+  box-shadow:0 1px 5px rgba(0,0,0,.22);
+  pointer-events:auto;
+  touch-action:none;
+}
+#af-tutorial .af-artboard-resize-handle-v122[data-dir="nw"]{left:-8px;top:-8px;cursor:nwse-resize}
+#af-tutorial .af-artboard-resize-handle-v122[data-dir="n"]{left:50%;top:-8px;transform:translateX(-50%);cursor:ns-resize}
+#af-tutorial .af-artboard-resize-handle-v122[data-dir="ne"]{right:-8px;top:-8px;cursor:nesw-resize}
+#af-tutorial .af-artboard-resize-handle-v122[data-dir="e"]{right:-8px;top:50%;transform:translateY(-50%);cursor:ew-resize}
+#af-tutorial .af-artboard-resize-handle-v122[data-dir="se"]{right:-8px;bottom:-8px;cursor:nwse-resize}
+#af-tutorial .af-artboard-resize-handle-v122[data-dir="s"]{left:50%;bottom:-8px;transform:translateX(-50%);cursor:ns-resize}
+#af-tutorial .af-artboard-resize-handle-v122[data-dir="sw"]{left:-8px;bottom:-8px;cursor:nesw-resize}
+#af-tutorial .af-artboard-resize-handle-v122[data-dir="w"]{left:-8px;top:50%;transform:translateY(-50%);cursor:ew-resize}
+#af-tutorial .af-artboard-label.af-artboard-resize-selected-v122,
+#af-tutorial .af-artboard-layer-v54.af-artboard-resize-selected-v122{
+  box-shadow:0 0 0 2px #18c7e6,0 0 14px rgba(24,199,230,.28) !important;
+}
+</style>
+<script>
+/* AF_RESIZE_ONLY_FINAL_V122 */
+(function(){
+  'use strict';
+  const root=document.querySelector('#af-tutorial');
+  if(!root)return;
+  const art=root.querySelector('#afArtboard');
+  const stage=root.querySelector('.af-stage');
+  if(!art||!stage)return;
+
+  let active=false;
+  let raf=0;
+  const box=document.createElement('div');
+  box.className='af-artboard-resize-box-v122';
+  ['nw','n','ne','e','se','s','sw','w'].forEach(function(dir){
+    const handle=document.createElement('i');
+    handle.className='af-artboard-resize-handle-v122';
+    handle.dataset.dir=dir;
+    box.appendChild(handle);
+  });
+  stage.appendChild(box);
+
+  function syncLegacySize(width,height){
+    art.dataset.afUserSized='1';
+    art.dataset.artboardWidth=String(Math.round(width));
+    art.dataset.artboardHeight=String(Math.round(height));
+    try{if(typeof afV58LockedArtboardW!=='undefined')afV58LockedArtboardW=Math.round(width);}catch(e){}
+    try{if(typeof afV58LockedArtboardH!=='undefined')afV58LockedArtboardH=Math.round(height);}catch(e){}
+    try{if(typeof afV58LockReady!=='undefined')afV58LockReady=true;}catch(e){}
+    try{if(typeof afV48ArtboardW!=='undefined')afV48ArtboardW=Math.round(width);}catch(e){}
+    try{if(typeof afV48ArtboardH!=='undefined')afV48ArtboardH=Math.round(height);}catch(e){}
+  }
+
+  function applySize(width,height){
+    width=Math.max(220,Math.min(1800,Math.round(width)));
+    height=Math.max(220,Math.min(1800,Math.round(height)));
+    syncLegacySize(width,height);
+    art.style.setProperty('width',width+'px','important');
+    art.style.setProperty('height',height+'px','important');
+    art.style.setProperty('min-width',width+'px','important');
+    art.style.setProperty('min-height',height+'px','important');
+    art.style.setProperty('max-width','none','important');
+    art.style.setProperty('max-height','none','important');
+    art.style.setProperty('aspect-ratio','auto','important');
+    art.style.setProperty('flex','0 0 auto','important');
+    positionBox();
+    try{if(typeof afV51SyncArtboardLabelSize==='function')afV51SyncArtboardLabelSize();}catch(e){}
+  }
+
+  function positionBox(){
+    if(!active)return;
+    const sr=stage.getBoundingClientRect();
+    const ar=art.getBoundingClientRect();
+    box.style.left=(ar.left-sr.left+stage.scrollLeft)+'px';
+    box.style.top=(ar.top-sr.top+stage.scrollTop)+'px';
+    box.style.width=ar.width+'px';
+    box.style.height=ar.height+'px';
+  }
+  function queuePosition(){
+    cancelAnimationFrame(raf);
+    raf=requestAnimationFrame(positionBox);
+  }
+
+  function markTriggers(on){
+    root.querySelectorAll('.af-artboard-label,.af-artboard-layer-v54').forEach(function(el){
+      el.classList.toggle('af-artboard-resize-selected-v122',on);
+    });
+  }
+  function activate(){
+    active=true;
+    box.classList.add('show');
+    markTriggers(true);
+    root.querySelectorAll('#afFinalArtboardPopover,#afArtboardPopoverV48,.af-artboard-popover-v48').forEach(function(el){
+      el.classList.remove('show');
+      el.style.setProperty('display','none','important');
+    });
+    queuePosition();
+  }
+  function deactivate(){
+    active=false;
+    box.classList.remove('show');
+    markTriggers(false);
+  }
+
+  function isTrigger(target){
+    return !!(target&&target.closest&&target.closest('#af-tutorial .af-artboard-label,#af-tutorial .af-artboard-layer-v54'));
+  }
+
+  /* Older handlers stop propagation on these elements. Capture first and activate after they finish. */
+  document.addEventListener('pointerdown',function(event){
+    if(!isTrigger(event.target))return;
+    setTimeout(activate,0);
+  },true);
+  document.addEventListener('click',function(event){
+    if(isTrigger(event.target)){
+      setTimeout(activate,0);
+      return;
+    }
+    if(!active)return;
+    if(event.target.closest&&event.target.closest('#af-tutorial .af-artboard-resize-box-v122'))return;
+    if(event.target.closest&&event.target.closest('#af-tutorial .af-artboard-label,#af-tutorial .af-artboard-layer-v54'))return;
+  },true);
+
+  box.querySelectorAll('.af-artboard-resize-handle-v122').forEach(function(handle){
+    handle.addEventListener('pointerdown',function(event){
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+      const dir=handle.dataset.dir;
+      const startX=event.clientX;
+      const startY=event.clientY;
+      const rect=art.getBoundingClientRect();
+      const startW=rect.width;
+      const startH=rect.height;
+      handle.setPointerCapture(event.pointerId);
+
+      function move(ev){
+        const dx=ev.clientX-startX;
+        const dy=ev.clientY-startY;
+        let width=startW;
+        let height=startH;
+        if(dir.includes('e'))width=startW+dx;
+        if(dir.includes('w'))width=startW-dx;
+        if(dir.includes('s'))height=startH+dy;
+        if(dir.includes('n'))height=startH-dy;
+        applySize(width,height);
+      }
+      function end(ev){
+        handle.removeEventListener('pointermove',move);
+        handle.removeEventListener('pointerup',end);
+        handle.removeEventListener('pointercancel',end);
+        try{handle.releasePointerCapture(ev.pointerId);}catch(e){}
+        queuePosition();
+        try{if(typeof saveHistory==='function')saveHistory();}catch(e){}
+      }
+      handle.addEventListener('pointermove',move);
+      handle.addEventListener('pointerup',end);
+      handle.addEventListener('pointercancel',end);
+    },true);
+  });
+
+  stage.addEventListener('scroll',queuePosition,{passive:true});
+  window.addEventListener('resize',queuePosition,true);
+  if(typeof ResizeObserver==='function'){
+    const observer=new ResizeObserver(queuePosition);
+    observer.observe(art);
+    observer.observe(stage);
+  }
+
+  /* Keep box available after dynamic Layers rerenders. */
+  const layerList=root.querySelector('#afLayerList');
+  if(layerList&&typeof MutationObserver==='function'){
+    new MutationObserver(function(){if(active)markTriggers(true);}).observe(layerList,{childList:true,subtree:true});
+  }
+})();
+</script>
+
+<style id="afPraiseExitBurstStyle">
+/* AF praise exit burst */
+.af-final-win::before,
+#af-tutorial .af-final-win::before{
+  content:none!important;
+  display:none!important;
+  animation:none!important;
+}
+.af-final-win.exit-burst,
+#af-tutorial .af-final-win.exit-burst{
+  animation:afPraiseExitContainer .56s cubic-bezier(.28,.02,.42,1) both!important;
+}
+.af-final-win.exit-burst .af-praise-letter,
+#af-tutorial .af-final-win.exit-burst .af-praise-letter{
+  animation:afPraiseExitLetter .54s cubic-bezier(.2,.72,.3,1) var(--exit-delay,0s) both!important;
+}
+.af-text-shard{
+  position:fixed;
+  left:var(--sx);
+  top:var(--sy);
+  width:var(--size,8px);
+  height:calc(var(--size,8px)*1.9);
+  z-index:6220;
+  pointer-events:none;
+  border-radius:999px;
+  background:hsl(var(--h),88%,76%);
+  box-shadow:0 0 7px hsla(var(--h),88%,72%,.75),0 0 16px hsla(var(--h),86%,70%,.35);
+  opacity:0;
+  transform:translate(-50%,-50%) rotate(var(--rot,0deg)) scale(.25);
+  animation:afTextShardBurst .58s cubic-bezier(.16,.72,.28,1) var(--delay,0s) forwards;
+  will-change:transform,opacity;
+}
+.af-text-shard.star{
+  width:calc(var(--size,8px)*1.25);
+  height:calc(var(--size,8px)*1.25);
+  border-radius:0;
+  clip-path:polygon(50% 0,61% 36%,100% 50%,61% 64%,50% 100%,39% 64%,0 50%,39% 36%);
+}
+@keyframes afPraiseExitContainer{
+  0%{opacity:1;transform:translate(-50%,-50%) scale3d(1.02,1.02,1)}
+  18%{opacity:1;transform:translate(-50%,-50%) scale3d(1.10,1.10,1)}
+  100%{opacity:0;transform:translate(-50%,-50%) scale3d(.86,.86,1)}
+}
+@keyframes afPraiseExitLetter{
+  0%{opacity:1;transform:scale3d(1,1,1) rotate(0deg)}
+  20%{opacity:1;transform:scale3d(1.10,1.10,1) rotate(0deg)}
+  100%{opacity:0;transform:translate3d(var(--exit-x,0px),var(--exit-y,0px),0) scale3d(.18,.18,1) rotate(var(--exit-r,0deg))}
+}
+@keyframes afTextShardBurst{
+  0%{opacity:0;transform:translate(-50%,-50%) translate3d(0,0,0) rotate(var(--rot,0deg)) scale(.22)}
+  10%{opacity:1;transform:translate(-50%,-50%) translate3d(0,0,0) rotate(var(--rot,0deg)) scale(1.25)}
+  72%{opacity:.95}
+  100%{opacity:0;transform:translate(-50%,-50%) translate3d(var(--tx),var(--ty),0) rotate(calc(var(--rot,0deg) + 220deg)) scale(.08)}
+}
+</style>
+<script>
+(function(){
+  if(window.afPraiseExitBurst)return;
+  window.afPraiseExitBurst=function(el){
+    if(!el||!el.classList.contains('show')||el.classList.contains('exit-burst'))return;
+    const letters=Array.from(el.querySelectorAll('.af-praise-letter'));
+    const palette=['#F7D575','#8FD8F2','#F39FBE','#C7B2F2','#9FE2C0','#F6B18B','#E4A9D7'];
+    letters.forEach((letter,index)=>{
+      const rect=letter.getBoundingClientRect();
+      const cx=rect.left+rect.width/2;
+      const cy=rect.top+rect.height/2;
+      const hue=(letter.style.getPropertyValue('--h')||String((index*47)%360)).trim();
+      const angle=((index/(Math.max(1,letters.length-1)))-.5)*1.55-Math.PI/2;
+      const distance=34+Math.min(58,rect.width*.8);
+      letter.style.setProperty('--exit-x',Math.cos(angle)*distance+'px');
+      letter.style.setProperty('--exit-y',Math.sin(angle)*distance+'px');
+      letter.style.setProperty('--exit-r',((index%2?1:-1)*(18+index*4))+'deg');
+      letter.style.setProperty('--exit-delay',(index*.012)+'s');
+      const shardCount=5;
+      for(let i=0;i<shardCount;i++){
+        const shard=document.createElement('i');
+        const q=(Math.PI*2*i/shardCount)+(index*.31)+(Math.random()-.5)*.38;
+        const power=38+Math.random()*74;
+        shard.className='af-text-shard'+(i===0?' star':'');
+        shard.style.setProperty('--sx',cx+'px');
+        shard.style.setProperty('--sy',cy+'px');
+        shard.style.setProperty('--tx',Math.cos(q)*power+'px');
+        shard.style.setProperty('--ty',Math.sin(q)*power+'px');
+        shard.style.setProperty('--rot',(q*180/Math.PI+90)+'deg');
+        shard.style.setProperty('--h',hue);
+        shard.style.setProperty('--size',(5+Math.random()*7)+'px');
+        shard.style.setProperty('--delay',(index*.008+Math.random()*.035)+'s');
+        document.body.appendChild(shard);
+        setTimeout(()=>shard.remove(),620);
+      }
+    });
+    el.classList.add('exit-burst');
+    setTimeout(()=>{
+      el.classList.remove('show','exit-burst');
+      letters.forEach(letter=>{
+        letter.style.removeProperty('--exit-x');
+        letter.style.removeProperty('--exit-y');
+        letter.style.removeProperty('--exit-r');
+        letter.style.removeProperty('--exit-delay');
+      });
+    },430);
+  };
+})();
+</script>
+
+<style id="afPraiseSquareRemovalFinal">
+/* Final praise rendering: no rectangular compositing surface, faster pop and whoosh exit. */
+html .af-final-win,
+html #af-tutorial .af-final-win{
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  filter:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  -webkit-mask:none!important;
+  mask:none!important;
+  clip-path:none!important;
+  contain:none!important;
+  isolation:auto!important;
+  perspective:none!important;
+  transform-style:flat!important;
+  backface-visibility:visible!important;
+  mix-blend-mode:normal!important;
+  overflow:visible!important;
+  will-change:auto!important;
+}
+html .af-final-win::before,
+html .af-final-win::after,
+html #af-tutorial .af-final-win::before,
+html #af-tutorial .af-final-win::after,
+html .af-final-win.show::before,
+html .af-final-win.show::after,
+html #af-tutorial .af-final-win.show::before,
+html #af-tutorial .af-final-win.show::after{
+  content:none!important;
+  display:none!important;
+  visibility:hidden!important;
+  width:0!important;
+  height:0!important;
+  opacity:0!important;
+  background:none!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  filter:none!important;
+  animation:none!important;
+  -webkit-mask:none!important;
+  mask:none!important;
+}
+html .af-praise-letter,
+html #af-tutorial .af-praise-letter{
+  isolation:auto!important;
+  contain:none!important;
+  will-change:auto!important;
+  backface-visibility:visible!important;
+}
+html .af-final-win.show,
+html #af-tutorial .af-final-win.show{
+  animation:afPraiseQuickPop 1.48s cubic-bezier(.2,.86,.18,1) both!important;
+}
+html .af-final-win.complete.show,
+html #af-tutorial .af-final-win.complete.show{
+  animation-duration:1.76s!important;
+}
+html .af-final-win.exit-burst,
+html #af-tutorial .af-final-win.exit-burst{
+  animation:afPraiseQuickWhoosh .38s cubic-bezier(.3,.02,.48,1) both!important;
+}
+html .af-final-win.exit-burst .af-praise-letter,
+html #af-tutorial .af-final-win.exit-burst .af-praise-letter{
+  animation:afPraiseQuickScatter .36s cubic-bezier(.18,.72,.26,1) var(--exit-delay,0s) both!important;
+}
+html .af-text-shard{
+  animation-duration:.40s!important;
+  box-shadow:0 0 5px hsla(var(--h),88%,72%,.65),0 0 10px hsla(var(--h),86%,70%,.26)!important;
+}
+@keyframes afPraiseQuickPop{
+  0%{opacity:0;transform:translate3d(-50%,-50%,0) scale3d(.12,.12,1)}
+  12%{opacity:1;transform:translate3d(-50%,-50%,0) scale3d(.48,.48,1)}
+  30%{opacity:1;transform:translate3d(-50%,-50%,0) scale3d(1.20,1.20,1)}
+  43%{transform:translate3d(-50%,-50%,0) scale3d(.93,.93,1)}
+  54%{transform:translate3d(-50%,-50%,0) scale3d(1.07,1.07,1)}
+  64%{transform:translate3d(-50%,-50%,0) scale3d(.985,.985,1)}
+  74%,100%{opacity:1;transform:translate3d(-50%,-50%,0) scale3d(1,1,1)}
+}
+@keyframes afPraiseQuickWhoosh{
+  0%{opacity:1;transform:translate3d(-50%,-50%,0) scale3d(1,1,1)}
+  18%{opacity:1;transform:translate3d(-50%,-50%,0) scale3d(1.10,1.10,1)}
+  100%{opacity:0;transform:translate3d(-50%,-50%,0) scale3d(.72,.72,1)}
+}
+@keyframes afPraiseQuickScatter{
+  0%{opacity:1;transform:translate3d(0,0,0) scale3d(1,1,1) rotate(0deg)}
+  14%{opacity:1;transform:translate3d(0,0,0) scale3d(1.08,1.08,1) rotate(0deg)}
+  100%{opacity:0;transform:translate3d(var(--exit-x,0px),var(--exit-y,0px),0) scale3d(.10,.10,1) rotate(var(--exit-r,0deg))}
+}
+</style>
