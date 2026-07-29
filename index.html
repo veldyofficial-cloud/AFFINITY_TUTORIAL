@@ -1,14 +1,36 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link data-af-jua-font="true" href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-<div id="af-tutorial" class="jua-regular" style="font-family:'Jua',sans-serif;"><div class="af-start" id="afStart"><div class="af-start-card"><div class="af-start-badge">AFFINITY UNIVERSE</div><h2>Mini Designer Tutorial</h2><p>도형 만들기, 컬러, 스트로크, 레이어, Export PNG까지<br>차근차근 먼저 익혀봐요.</p><button type="button" id="afStartBtn">튜토리얼 시작하기</button></div></div><div class="af-toast" id="afToast">Good Job!</div><div class="af-app"><header class="af-topbar"><section class="af-mission-top" id="afMissionCard"><div class="af-mission-kicker"><span>TODAY MISSION</span><b id="afMissionStep">1 / 24</b></div><div class="af-mission-body"><strong id="afMissionTitle">파일 이름 바꾸기</strong><span id="afMissionDesc">상단의 Untitled를 눌러 원하는 이름으로 바꿔보세요.</span></div></section><div class="af-top-actions"><button type="button" class="af-export" id="afExport">Export PNG</button></div></header><div class="af-workspace"><aside class="af-toolbar"><button type="button" class="af-tool active" data-tool="move" id="afMoveTool" title="Move Tool (V)"><svg viewBox="0 0 32 32"><path d="M7 3 L23 18 L15.5 18.8 L19.5 27.5 L15.6 29.2 L11.6 20.5 L7 26 Z" fill="#050505" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></button><div class="af-shape-wrap"><button type="button" class="af-tool" data-tool="shape" id="afShapeTool" title="Shape Tool (U)"><span id="afShapeIcon" class="af-icon af-icon-rect"></span></button><div class="af-shape-menu" id="afShapeMenu"><button type="button" data-shape="rect"><span class="af-icon af-icon-rect"></span></button><button type="button" data-shape="circle"><span class="af-icon af-icon-circle"></span></button><button type="button" data-shape="round"><span class="af-icon af-icon-round"></span></button><button type="button" data-shape="triangle"><span class="af-icon af-icon-triangle"></span></button><button type="button" data-shape="star">★</button></div></div><div class="af-mini-targets"><button type="button" id="afMiniFill" class="active"></button><button type="button" id="afMiniStroke"></button></div></aside><main class="af-main"><div class="af-docbar"><input id="afFileName" type="text" value="Untitled" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" draggable="false"><span>@ 71%</span><em>V 무브툴 / U 도형툴 / ctrl(command)+Z / ctrl(command)+shift+Z / ctrl(command)+C,V / ctrl(command)+J / ctrl(command)+shift 드래그 / ctrl(command)+G / ctrl(command)+shift+G / 레이어 패널 아이콘으로 순서 조절</em></div><div class="af-stage"><div class="af-artboard-wrap"><div class="af-artboard-label">Artboard1</div><div class="af-artboard" id="afArtboard"><div class="af-empty" id="afEmpty">도형 도구를 선택한 뒤<br>흰색 Artboard에서 드래그해보세요.</div><div class="af-drag-guide" id="afDragGuide"><strong>드래그란?</strong><span>마우스를 누른 채 움직이고 원하는 위치에서 손을 떼는 동작이에요.</span><i></i></div><div class="af-guide-overlay" id="afGuideOverlay"></div></div></div></div><div class="af-bottombar"><div><strong id="afStatusStrong">Ready</strong><span id="afStatusText">튜토리얼을 시작해보세요.</span></div><div><span id="afSelectionInfo">No Selection</span><span id="afCoord">X:0 / Y:0</span></div></div></main><aside class="af-sidebar"><section class="af-panel af-top-panel"><div class="af-tabs"><button type="button" class="active" data-panel="colour">Colour</button><button type="button" data-panel="stroke">Stroke</button></div><div class="af-tab-body active" id="afColourPanel"><div class="af-colour-topline"><div class="af-colour-targets"><button type="button" id="afBigFill" class="active" title="면 색상"></button><button type="button" id="afBigStroke" title="선 색상"></button><button type="button" id="afNoColor" title="색상 없음"></button></div><div class="af-colour-hexbox"><span>#:</span><b id="afHexText">EBEBEB</b></div></div><div class="af-wheel-wrap"><div class="af-wheel-stage" id="afWheelStage"><canvas id="afWheelCanvas" width="290" height="290"></canvas><button type="button" id="afHuePointer" class="af-wheel-pointer af-hue-pointer" aria-label="Hue pointer"></button><button type="button" id="afTriPointer" class="af-wheel-pointer af-tri-pointer" aria-label="Triangle pointer"></button></div></div><label class="af-range"><span>Opacity</span><input type="range" id="afOpacity" min="0" max="100" value="100"><b id="afOpacityText">100%</b></label></div><div class="af-tab-body" id="afStrokePanel"><div class="af-stroke-row"><span>Style</span><button type="button" class="active" data-stroke-style="none">None</button><button type="button" data-stroke-style="solid">Solid</button><button type="button" data-stroke-style="dashed">Dash</button><button type="button" data-stroke-style="dotted">Dot</button></div><label class="af-range"><span>Width</span><input type="range" id="afStrokeWidth" min="0" max="30" value="0"><b id="afStrokeText">0pt</b></label></div></section><section class="af-panel af-layer-panel"><div class="af-layer-head"><div><strong>Layers</strong></div></div><div class="af-layer-list" id="afLayerList"></div><div class="af-layer-foot"><button type="button" id="afTrashBtn" class="af-trash-btn" title="삭제"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6l1 2h4v2H4V5h4l1-2Zm1 7h2v8h-2v-8Zm4 0h2v8h-2v-8ZM7 10h2v8H7v-8Zm-1 10h12l1-12H5l1 12Z" fill="currentColor"/></svg></button></div></section></aside></div></div></div><style>
-.jua-regular {
-  font-family: "Jua", sans-serif !important;
+<style data-af-laundry-font="true">
+@font-face {
+  font-family: 'LaundryGothic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicR.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LaundryGothic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+#af-tutorial,
+#af-tutorial *,
+#af-tutorial button,
+#af-tutorial input,
+#af-tutorial textarea,
+#af-tutorial select,
+#af-tutorial option {
+  font-family: 'LaundryGothic', sans-serif !important;
+}
+</style>
+<div id="af-tutorial" class="laundry-gothic" style="font-family:'LaundryGothic',sans-serif;"><div class="af-start" id="afStart"><div class="af-start-card"><div class="af-start-badge">AFFINITY UNIVERSE</div><h2>Mini Designer Tutorial</h2><p>도형 만들기, 컬러, 스트로크, 레이어, Export PNG까지<br>차근차근 먼저 익혀봐요.</p><button type="button" id="afStartBtn">튜토리얼 시작하기</button></div></div><div class="af-toast" id="afToast">Good Job!</div><div class="af-app"><header class="af-topbar"><section class="af-mission-top" id="afMissionCard"><div class="af-mission-kicker"><span>TODAY MISSION</span><b id="afMissionStep">1 / 24</b></div><div class="af-mission-body"><strong id="afMissionTitle">파일 이름 바꾸기</strong><span id="afMissionDesc">상단의 Untitled를 눌러 원하는 이름으로 바꿔보세요.</span></div></section><div class="af-top-actions"><button type="button" class="af-export" id="afExport">Export PNG</button></div></header><div class="af-workspace"><aside class="af-toolbar"><button type="button" class="af-tool active" data-tool="move" id="afMoveTool" title="Move Tool (V)"><svg viewBox="0 0 32 32"><path d="M7 3 L23 18 L15.5 18.8 L19.5 27.5 L15.6 29.2 L11.6 20.5 L7 26 Z" fill="#050505" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></button><div class="af-shape-wrap"><button type="button" class="af-tool" data-tool="shape" id="afShapeTool" title="Shape Tool (U)"><span id="afShapeIcon" class="af-icon af-icon-rect"></span></button><div class="af-shape-menu" id="afShapeMenu"><button type="button" data-shape="rect"><span class="af-icon af-icon-rect"></span></button><button type="button" data-shape="circle"><span class="af-icon af-icon-circle"></span></button><button type="button" data-shape="round"><span class="af-icon af-icon-round"></span></button><button type="button" data-shape="triangle"><span class="af-icon af-icon-triangle"></span></button><button type="button" data-shape="star">★</button></div></div><div class="af-mini-targets"><button type="button" id="afMiniFill" class="active"></button><button type="button" id="afMiniStroke"></button></div></aside><main class="af-main"><div class="af-docbar"><input id="afFileName" type="text" value="Untitled" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" draggable="false"><span>@ 71%</span><em>V 무브툴 / U 도형툴 / ctrl(command)+Z / ctrl(command)+shift+Z / ctrl(command)+C,V / ctrl(command)+J / ctrl(command)+shift 드래그 / ctrl(command)+G / ctrl(command)+shift+G / 레이어 패널 아이콘으로 순서 조절</em></div><div class="af-stage"><div class="af-artboard-wrap"><div class="af-artboard-label">Artboard1</div><div class="af-artboard" id="afArtboard"><div class="af-empty" id="afEmpty">도형 도구를 선택한 뒤<br>흰색 Artboard에서 드래그해보세요.</div><div class="af-drag-guide" id="afDragGuide"><strong>드래그란?</strong><span>마우스를 누른 채 움직이고 원하는 위치에서 손을 떼는 동작이에요.</span><i></i></div><div class="af-guide-overlay" id="afGuideOverlay"></div></div></div></div><div class="af-bottombar"><div><strong id="afStatusStrong">Ready</strong><span id="afStatusText">튜토리얼을 시작해보세요.</span></div><div><span id="afSelectionInfo">No Selection</span><span id="afCoord">X:0 / Y:0</span></div></div></main><aside class="af-sidebar"><section class="af-panel af-top-panel"><div class="af-tabs"><button type="button" class="active" data-panel="colour">Colour</button><button type="button" data-panel="stroke">Stroke</button></div><div class="af-tab-body active" id="afColourPanel"><div class="af-colour-topline"><div class="af-colour-targets"><button type="button" id="afBigFill" class="active" title="면 색상"></button><button type="button" id="afBigStroke" title="선 색상"></button><button type="button" id="afNoColor" title="색상 없음"></button></div><div class="af-colour-hexbox"><span>#:</span><b id="afHexText">EBEBEB</b></div></div><div class="af-wheel-wrap"><div class="af-wheel-stage" id="afWheelStage"><canvas id="afWheelCanvas" width="290" height="290"></canvas><button type="button" id="afHuePointer" class="af-wheel-pointer af-hue-pointer" aria-label="Hue pointer"></button><button type="button" id="afTriPointer" class="af-wheel-pointer af-tri-pointer" aria-label="Triangle pointer"></button></div></div><label class="af-range"><span>Opacity</span><input type="range" id="afOpacity" min="0" max="100" value="100"><b id="afOpacityText">100%</b></label></div><div class="af-tab-body" id="afStrokePanel"><div class="af-stroke-row"><span>Style</span><button type="button" class="active" data-stroke-style="none">None</button><button type="button" data-stroke-style="solid">Solid</button><button type="button" data-stroke-style="dashed">Dash</button><button type="button" data-stroke-style="dotted">Dot</button></div><label class="af-range"><span>Width</span><input type="range" id="afStrokeWidth" min="0" max="30" value="0"><b id="afStrokeText">0pt</b></label></div></section><section class="af-panel af-layer-panel"><div class="af-layer-head"><div><strong>Layers</strong></div></div><div class="af-layer-list" id="afLayerList"></div><div class="af-layer-foot"><button type="button" id="afTrashBtn" class="af-trash-btn" title="삭제"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6l1 2h4v2H4V5h4l1-2Zm1 7h2v8h-2v-8Zm4 0h2v8h-2v-8ZM7 10h2v8H7v-8Zm-1 10h12l1-12H5l1 12Z" fill="currentColor"/></svg></button></div></section></aside></div></div></div><style>
+.laundry-gothic {
+  font-family: "LaundryGothic", sans-serif !important;
   font-weight: 400;
   font-style: normal;
 }
 
-#af-tutorial{position:relative;width:100%;max-width:1500px;height:min(980px,calc(100vh - 8px));min-height:620px;margin:0 auto;overflow:hidden;background:#3a3a3d;color:#fff;font-family:"Jua",sans-serif;font-weight:400;font-style:normal;border-radius:28px;box-shadow:0 28px 80px rgba(0,0,0,.22)}
+#af-tutorial{position:relative;width:100%;max-width:1500px;height:min(980px,calc(100vh - 8px));min-height:620px;margin:0 auto;overflow:hidden;background:#3a3a3d;color:#fff;font-family:"LaundryGothic",sans-serif;font-weight:400;font-style:normal;border-radius:28px;box-shadow:0 28px 80px rgba(0,0,0,.22)}
 #af-tutorial *{box-sizing:border-box}
 #af-tutorial button,#af-tutorial input{font-family:inherit}
 #af-tutorial .af-start{position:absolute;inset:0;z-index:2000;background:rgba(15,23,42,.75);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center}
@@ -1844,7 +1866,7 @@ stroke-linejoin:round;
 
 
 
-/* Jua font final override: keep this at the very end of the style block. */
+/* LaundryGothic font final override: keep this at the very end of the style block. */
 #af-tutorial,
 #af-tutorial *,
 #af-tutorial button,
@@ -1852,7 +1874,7 @@ stroke-linejoin:round;
 #af-tutorial textarea,
 #af-tutorial select,
 #af-tutorial option {
-  font-family: "Jua", sans-serif !important;
+  font-family: "LaundryGothic", sans-serif !important;
   font-style: normal;
 }
 
@@ -1930,14 +1952,6 @@ stroke-linejoin:round;
 </style><script>
 
 (function(){
-const afJuaFontHref="https://fonts.googleapis.com/css2?family=Jua&display=swap";
-if(!document.querySelector('link[data-af-jua-font="true"]')){
-  const afJuaFontLink=document.createElement("link");
-  afJuaFontLink.rel="stylesheet";
-  afJuaFontLink.href=afJuaFontHref;
-  afJuaFontLink.setAttribute("data-af-jua-font","true");
-  document.head.appendChild(afJuaFontLink);
-}
 const root=document.getElementById("af-tutorial");
 const $=s=>root.querySelector(s);
 const $$=s=>Array.from(root.querySelectorAll(s));
@@ -13638,7 +13652,7 @@ if(!objects().length&&empty)empty.style.display='flex';
 
 function afV98SampleSvg(animal){
 if(animal==='bunny'){
-return '<svg viewBox="0 0 120 150" aria-hidden="true"><ellipse cx="45" cy="42" rx="16" ry="31" fill="#FFE6F4" stroke="#6B4B3E" stroke-width="6"/><ellipse cx="75" cy="42" rx="16" ry="31" fill="#FFE6F4" stroke="#6B4B3E" stroke-width="6"/><ellipse cx="45" cy="44" rx="8" ry="21" fill="#FFF7FB"/><ellipse cx="75" cy="44" rx="8" ry="21" fill="#FFF7FB"/><ellipse cx="60" cy="86" rx="43" ry="35" fill="#FFF0F8" stroke="#6B4B3E" stroke-width="6"/><circle cx="48" cy="81" r="4.5" fill="#374151"/><circle cx="72" cy="81" r="4.5" fill="#374151"/><ellipse cx="60" cy="96" rx="12" ry="8" fill="#FFF9EB" stroke="#6B4B3E" stroke-width="4"/><ellipse cx="60" cy="91" rx="5" ry="3.4" fill="#374151"/></svg>';
+return '<svg viewBox="0 0 120 150" aria-hidden="true"><ellipse cx="45" cy="43" rx="15.5" ry="30" fill="#FFE6F4" stroke="#6B4B3E" stroke-width="6"/><ellipse cx="75" cy="43" rx="15.5" ry="30" fill="#FFE6F4" stroke="#6B4B3E" stroke-width="6"/><ellipse cx="45" cy="45" rx="7.5" ry="20" fill="#FFF7FB"/><ellipse cx="75" cy="45" rx="7.5" ry="20" fill="#FFF7FB"/><ellipse cx="60" cy="91" rx="43" ry="32" fill="#FFF0F8" stroke="#6B4B3E" stroke-width="6"/><circle cx="48" cy="86" r="4.5" fill="#374151"/><circle cx="72" cy="86" r="4.5" fill="#374151"/><ellipse cx="60" cy="101" rx="12" ry="8.2" fill="#FFF9EB" stroke="#6B4B3E" stroke-width="4"/><ellipse cx="60" cy="98" rx="5" ry="3.2" fill="#374151"/></svg>';
 }
 return '<svg viewBox="0 0 120 150" aria-hidden="true"><ellipse cx="34" cy="58" rx="18" ry="30" fill="#C58A5C" stroke="#6B4B3E" stroke-width="6" transform="rotate(-14 34 58)"/><ellipse cx="86" cy="58" rx="18" ry="30" fill="#C58A5C" stroke="#6B4B3E" stroke-width="6" transform="rotate(14 86 58)"/><ellipse cx="60" cy="84" rx="42" ry="36" fill="#FFE7B8" stroke="#6B4B3E" stroke-width="6"/><circle cx="49" cy="78" r="5" fill="#374151"/><circle cx="71" cy="78" r="5" fill="#374151"/><ellipse cx="60" cy="97" rx="16" ry="11" fill="#FFF7E8" stroke="#6B4B3E" stroke-width="4"/><ellipse cx="60" cy="91" rx="7" ry="4.5" fill="#374151"/></svg>';
 }
@@ -16039,38 +16053,52 @@ say=function(txt,force){if(force||Date.now()>=lock)return say0(txt||'');};
 showCoach=hideCoach=()=>{};
 function burst(c,b){
 try{
-const colors=['#F9D7A5','#C8E3F4','#F3C7D4','#D8CDEE','#CBE7D8','#F3D0B9','#E9C8DE','#F8F0E6'];
-const origins=[[-92,-20],[92,-16],[0,34]];
+const colors=['#F4C16D','#86C8EE','#EE91B1','#B9A4E8','#93D9B4','#F0A980','#D79AC9','#F5DE8E'];
+const origins=[[-150,-22],[150,-18],[-72,34],[72,38],[0,-62]];
 document.querySelectorAll('.af-fw,.af-fw-ring').forEach(e=>e.remove());
-origins.forEach((o,i)=>{
-const ring=document.createElement('i');
-ring.className='af-fw-ring';
-ring.style.setProperty('--ox',o[0]+'px');
-ring.style.setProperty('--oy',o[1]+'px');
-ring.style.setProperty('--c',colors[(i*2)%colors.length]);
-ring.style.setProperty('--d',(i*.055)+'s');
-document.body.appendChild(ring);
-setTimeout(()=>ring.remove(),1250);
-});
-for(let j=0;j<c;j++){
+const total=Math.max(90,Math.round(c*1.35));
+for(let j=0;j<total;j++){
 const f=document.createElement('i');
 const oi=j%origins.length;
 const o=origins[oi];
-const q=Math.PI*2*(j/c*origins.length-Math.floor(j/c*origins.length))+((oi-1)*.12)+(Math.random()-.5)*.16;
-const r=b*(.7+Math.random()*1.15);
-const type=j%7===0?'star':(j%3===0?'bar':'dot');
+const local=(j-oi)/origins.length;
+const q=(Math.PI*2*(local/Math.max(1,total/origins.length)))+((oi-2)*.10)+(Math.random()-.5)*.22;
+const power=b*(.82+Math.random()*1.42);
+const type=j%5===0?'star':(j%2===0?'bar':'spark');
 f.className='af-fw '+type;
 f.style.setProperty('--ox',o[0]+'px');
 f.style.setProperty('--oy',o[1]+'px');
-f.style.setProperty('--x',Math.cos(q)*r+'px');
-f.style.setProperty('--y',Math.sin(q)*r+'px');
+f.style.setProperty('--x',Math.cos(q)*power+'px');
+f.style.setProperty('--y',Math.sin(q)*power+'px');
+f.style.setProperty('--mx',Math.cos(q)*power*.34+'px');
+f.style.setProperty('--my',Math.sin(q)*power*.34+'px');
 f.style.setProperty('--r',(Math.round(q*180/Math.PI)+90)+'deg');
-f.style.setProperty('--c',colors[j%colors.length]);
-f.style.setProperty('--s',(5+Math.random()*7).toFixed(1)+'px');
-f.style.setProperty('--d',(Math.random()*.11).toFixed(3)+'s');
-f.style.setProperty('--dur',(.95+Math.random()*.48).toFixed(3)+'s');
+f.style.setProperty('--c',colors[(j+oi)%colors.length]);
+f.style.setProperty('--s',(5.5+Math.random()*8.5).toFixed(1)+'px');
+f.style.setProperty('--d',(Math.random()*.075+oi*.012).toFixed(3)+'s');
+f.style.setProperty('--dur',(.78+Math.random()*.38).toFixed(3)+'s');
 document.body.appendChild(f);
-setTimeout(()=>f.remove(),1750);
+setTimeout(()=>f.remove(),1550);
+}
+// A second, very short outward snap makes the explosion feel like a real "pop" without circular rings.
+for(let k=0;k<34;k++){
+const f=document.createElement('i');
+const q=(Math.PI*2*k/34)+(Math.random()-.5)*.12;
+const power=b*(.42+Math.random()*.34);
+f.className='af-fw flash '+(k%3===0?'star':'bar');
+f.style.setProperty('--ox','0px');
+f.style.setProperty('--oy','0px');
+f.style.setProperty('--x',Math.cos(q)*power+'px');
+f.style.setProperty('--y',Math.sin(q)*power+'px');
+f.style.setProperty('--mx',Math.cos(q)*power*.18+'px');
+f.style.setProperty('--my',Math.sin(q)*power*.18+'px');
+f.style.setProperty('--r',(Math.round(q*180/Math.PI)+90)+'deg');
+f.style.setProperty('--c',colors[k%colors.length]);
+f.style.setProperty('--s',(7+Math.random()*8).toFixed(1)+'px');
+f.style.setProperty('--d',(Math.random()*.035).toFixed(3)+'s');
+f.style.setProperty('--dur',(.48+Math.random()*.18).toFixed(3)+'s');
+document.body.appendChild(f);
+setTimeout(()=>f.remove(),1000);
 }
 }catch(e){}
 }
@@ -16109,7 +16137,7 @@ last=i;
 let a=S[i],t=++okn;
 lock=n+3300;
 paintPraise(a.label,false);
-burst(72,138);
+burst(92,172);
 setTimeout(()=>{if(t===okn&&ok.el)ok.el.classList.remove('show')},1900);
 try{
 stopA();
@@ -16125,7 +16153,7 @@ oldOff();
 let t=++okn;
 lock=Date.now()+5200;
 paintPraise('미션 완료!',true);
-burst(108,168);
+burst(132,205);
 setTimeout(()=>{if(t===okn&&ok.el)ok.el.classList.remove('show')},2700);
 try{
 stopA();
@@ -16200,7 +16228,7 @@ border-radius:0!important;
 background-color:transparent!important;
 background-image:none!important;
 box-shadow:none!important;
-font-family:"Jua",sans-serif!important;
+font-family:"LaundryGothic",sans-serif!important;
 font-size:clamp(58px,8vw,112px);
 font-weight:400!important;
 line-height:1!important;
@@ -16243,52 +16271,41 @@ pointer-events:none;
 }
 #af-tutorial .af-final-win::after,
 .af-final-win::after{
-content:"";
-position:absolute;
-left:50%;
-top:50%;
-width:48px;
-height:48px;
-transform:translate(-50%,-50%) scale(.1);
-border:3px solid rgba(248,240,230,.74);
-border-radius:50%;
-opacity:0;
-z-index:-1;
-box-shadow:0 0 10px rgba(248,240,230,.58),0 0 24px rgba(249,215,165,.34),0 0 38px rgba(200,227,244,.28);
-pointer-events:none;
+content:none!important;
+display:none!important;
 }
 #af-tutorial .af-final-win.show::before,
 .af-final-win.show::before{animation:afPraiseRays 1.1s ease-out both}
 #af-tutorial .af-final-win.show::after,
-.af-final-win.show::after{animation:afPraiseRing .88s ease-out .04s both}
+.af-final-win.show::after{display:none!important;animation:none!important}
 
 #af-tutorial .af-praise-letter,
 .af-praise-letter{
 display:inline-block;
 position:relative;
-color:hsl(var(--h),48%,58%);
+color:hsl(var(--h),72%,64%);
 background:linear-gradient(180deg,
-hsl(var(--h),50%,88%) 0%,
-hsl(var(--h),49%,69%) 27%,
-hsl(var(--h),48%,57%) 57%,
-hsl(var(--h),44%,41%) 100%);
+hsl(var(--h),74%,92%) 0%,
+hsl(var(--h),73%,80%) 27%,
+hsl(var(--h),72%,69%) 57%,
+hsl(var(--h),68%,58%) 100%);
 -webkit-background-clip:text;
 background-clip:text;
 -webkit-text-fill-color:transparent;
 -webkit-text-stroke:0 transparent;
 paint-order:fill;
 text-shadow:
-0 1px 0 hsl(var(--h),41%,43%),
-0 2px 0 hsl(var(--h),41%,40%),
-0 3px 0 hsl(var(--h),41%,37%),
-0 4px 0 hsl(var(--h),41%,34%),
-0 5px 0 hsl(var(--h),41%,31%),
-0 6px 0 hsl(var(--h),41%,28%),
-0 9px 4px rgba(15,23,42,.30),
-0 15px 13px rgba(15,23,42,.22),
-0 0 15px hsla(var(--h),48%,62%,.62),
-0 0 30px hsla(var(--h),48%,62%,.36);
-filter:saturate(1) drop-shadow(0 5px 1px rgba(15,23,42,.16));
+0 1px 0 hsl(var(--h),62%,58%),
+0 2px 0 hsl(var(--h),62%,55%),
+0 3px 0 hsl(var(--h),61%,52%),
+0 4px 0 hsl(var(--h),60%,49%),
+0 5px 0 hsl(var(--h),59%,46%),
+0 6px 0 hsl(var(--h),58%,43%),
+0 9px 4px rgba(15,23,42,.22),
+0 15px 13px rgba(15,23,42,.16),
+0 0 15px hsla(var(--h),76%,70%,.58),
+0 0 30px hsla(var(--h),74%,68%,.30);
+filter:saturate(.92) drop-shadow(0 5px 1px rgba(15,23,42,.12));
 transform-origin:50% 78%;
 transform-style:preserve-3d;
 backface-visibility:hidden;
@@ -16312,7 +16329,7 @@ z-index:6190;
 pointer-events:none;
 background:var(--c,#F9D7A5);
 border-radius:50%;
-box-shadow:0 0 4px var(--c),0 0 9px var(--c),0 0 14px var(--c);filter:saturate(.72) brightness(1.03);
+box-shadow:0 0 4px var(--c),0 0 9px var(--c),0 0 14px var(--c);filter:saturate(.90) brightness(1.03);
 opacity:0;
 transform:translate(-50%,-50%) translate(0,0) rotate(var(--r,0deg)) scale(.18);
 animation:afFWSpark var(--dur,1.2s) cubic-bezier(.12,.72,.2,1) var(--d,0s) forwards;
@@ -16321,8 +16338,19 @@ will-change:transform,opacity;
 #af-tutorial .af-fw.bar,
 .af-fw.bar{
 width:4px;
-height:calc(var(--s,8px)*2.25);
+height:calc(var(--s,8px)*2.8);
 border-radius:999px;
+}
+#af-tutorial .af-fw.spark,
+.af-fw.spark{
+width:calc(var(--s,8px)*.62);
+height:calc(var(--s,8px)*1.9);
+border-radius:999px;
+}
+#af-tutorial .af-fw.flash,
+.af-fw.flash{
+box-shadow:0 0 7px var(--c),0 0 16px var(--c),0 0 28px var(--c);
+filter:saturate(1.02) brightness(1.12);
 }
 #af-tutorial .af-fw.star,
 .af-fw.star{
@@ -16332,30 +16360,17 @@ border-radius:0;
 clip-path:polygon(50% 0,61% 36%,100% 50%,61% 64%,50% 100%,39% 64%,0 50%,39% 36%);
 }
 #af-tutorial .af-fw-ring,
-.af-fw-ring{
-position:fixed;
-left:calc(50% + var(--ox,0px));
-top:calc(50% + var(--oy,0px));
-width:22px;
-height:22px;
-transform:translate(-50%,-50%) scale(.12);
-border:2px solid var(--c,#F8F0E6);
-border-radius:50%;
-box-shadow:0 0 6px var(--c),inset 0 0 6px var(--c);filter:saturate(.70);
-opacity:0;
-z-index:6189;
-pointer-events:none;
-animation:afFWRing .86s ease-out var(--d,0s) forwards;
-}
+.af-fw-ring{display:none!important;}
 
 @keyframes afPraisePop{
-0%{opacity:0;transform:translate(-50%,-50%) scale(.06) rotate(-10deg);filter:brightness(1) saturate(1)}
-9%{opacity:1;transform:translate(-50%,-50%) scale(1.42) rotate(4deg);filter:brightness(1) saturate(1)}
-20%{opacity:1;transform:translate(-50%,-50%) scale(.9) rotate(-2deg)}
-31%{opacity:1;transform:translate(-50%,-50%) scale(1.11) rotate(1deg)}
-43%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0deg)}
+0%{opacity:0;transform:translate(-50%,-50%) scale(.015) rotate(-14deg);filter:brightness(1.12) saturate(1.04)}
+6%{opacity:1;transform:translate(-50%,-50%) scale(1.68) rotate(5deg);filter:brightness(1.08) saturate(1.03)}
+15%{opacity:1;transform:translate(-50%,-50%) scale(.78) rotate(-3deg)}
+25%{opacity:1;transform:translate(-50%,-50%) scale(1.19) rotate(1.5deg)}
+35%{opacity:1;transform:translate(-50%,-50%) scale(.96) rotate(-.5deg)}
+45%{opacity:1;transform:translate(-50%,-50%) scale(1.04) rotate(0deg)}
 72%{opacity:1;transform:translate(-50%,-52%) scale(1.04) rotate(0deg)}
-100%{opacity:0;transform:translate(-50%,-74%) scale(1.24) rotate(0deg);filter:brightness(1) saturate(1)}
+100%{opacity:0;transform:translate(-50%,-76%) scale(1.28) rotate(0deg);filter:brightness(1) saturate(1)}
 }
 @keyframes afPraiseLetter{
 0%{transform:perspective(820px) translateY(38px) translateZ(-90px) scale(.15) rotate(-18deg) rotateX(-68deg) rotateY(-12deg)}
@@ -16364,30 +16379,23 @@ animation:afFWRing .86s ease-out var(--d,0s) forwards;
 100%{transform:perspective(820px) translateY(0) translateZ(0) scale(1) rotate(0deg) rotateX(0deg) rotateY(0deg)}
 }
 @keyframes afPraiseShimmer{
-from{filter:brightness(1) saturate(.96) drop-shadow(0 6px 2px rgba(15,23,42,.18))}
-to{filter:brightness(1) saturate(1.06) drop-shadow(0 6px 2px rgba(15,23,42,.18))}
+from{filter:brightness(1) saturate(.90) drop-shadow(0 6px 2px rgba(15,23,42,.14))}
+to{filter:brightness(1) saturate(1.00) drop-shadow(0 6px 2px rgba(15,23,42,.14))}
 }
 @keyframes afPraiseRays{
 0%{opacity:0;transform:translate(-50%,-50%) scale(.08) rotate(-18deg)}
 18%{opacity:1}
 100%{opacity:0;transform:translate(-50%,-50%) scale(1.12) rotate(18deg)}
 }
-@keyframes afPraiseRing{
-0%{opacity:0;transform:translate(-50%,-50%) scale(.1)}
-18%{opacity:1}
-100%{opacity:0;transform:translate(-50%,-50%) scale(8.5)}
-}
+
 @keyframes afFWSpark{
-0%{opacity:0;transform:translate(-50%,-50%) translate(0,0) rotate(var(--r,0deg)) scale(.18)}
-9%{opacity:.84}
-66%{opacity:.78}
-100%{opacity:0;transform:translate(-50%,-50%) translate(var(--x),var(--y)) rotate(calc(var(--r,0deg) + 210deg)) scale(.05)}
+0%{opacity:0;transform:translate(-50%,-50%) translate(0,0) rotate(var(--r,0deg)) scale(.08)}
+4%{opacity:1;transform:translate(-50%,-50%) translate(0,0) rotate(var(--r,0deg)) scale(1.55)}
+16%{opacity:1;transform:translate(-50%,-50%) translate(var(--mx),var(--my)) rotate(calc(var(--r,0deg) + 28deg)) scale(1.02)}
+66%{opacity:.88}
+100%{opacity:0;transform:translate(-50%,-50%) translate(var(--x),var(--y)) rotate(calc(var(--r,0deg) + 230deg)) scale(.04)}
 }
-@keyframes afFWRing{
-0%{opacity:0;transform:translate(-50%,-50%) scale(.1)}
-18%{opacity:.72}
-100%{opacity:0;transform:translate(-50%,-50%) scale(8)}
-}
+
 
 #af-tutorial .af-guide-eye-btn-final{display:none!important}
 #af-tutorial .af-artboard,
@@ -16777,7 +16785,7 @@ afV110RefreshControls();
 })();
 
 
-/* AF_V120_TEXT_SATURATION_50_BRIGHTNESS_0 */
+/* AF_V121_RICHER_PRAISE_COLOR_AND_EXACT_CENTERED_BUNNY_GUIDE */
 /* v119: faint silhouette guides + borderless soft-pastel 3D firework praise text */
 /* v114: high-DPI anti-aliased colour wheel renderer */
 (function(){
@@ -17068,32 +17076,32 @@ const afV115SoftLine='rgba(70,105,145,.20)';
   Coordinates are mapped into the 3:4 artboard without stretching the face or ears.
 */
 guides.bunny=[
-{x:40.3198,y:38.3837,w:20.6512,h:30.0087,fill:'transparent',stroke:afV115Line,label:'왼쪽 바깥 귀',layer:10,required:true},
-{x:59.6802,y:38.3837,w:20.6512,h:30.0087,fill:'transparent',stroke:afV115Line,label:'오른쪽 바깥 귀',layer:10,required:true},
-{x:40.3198,y:39.3517,w:10.3256,h:20.3285,fill:'transparent',stroke:afV115SoftLine,label:'왼쪽 안쪽 귀',layer:20,required:true},
-{x:59.6802,y:39.3517,w:10.3256,h:20.3285,fill:'transparent',stroke:afV115SoftLine,label:'오른쪽 안쪽 귀',layer:20,required:true},
-{x:50,y:59.6802,w:55.5,h:33.8808,fill:'transparent',stroke:afV115Line,label:'얼굴',layer:30,required:true},
-{x:42.2558,y:57.2602,w:5.8081,h:4.3561,fill:'transparent',stroke:afV115Line,label:'왼쪽 눈',layer:40,required:true},
-{x:57.7442,y:57.2602,w:5.8081,h:4.3561,fill:'transparent',stroke:afV115Line,label:'오른쪽 눈',layer:40,required:true},
-{x:50,y:64.5203,w:15.4884,h:7.7442,fill:'transparent',stroke:afV115Line,label:'입 주변',layer:45,required:true},
-{x:50,y:62.1003,w:6.4535,h:3.2913,fill:'transparent',stroke:afV115Line,label:'코',layer:50,required:true}
+{x:40.5,y:36.8,w:20.5,h:30.5,fill:'transparent',stroke:afV115Line,label:'왼쪽 바깥 귀',layer:10,required:true},
+{x:59.5,y:36.8,w:20.5,h:30.5,fill:'transparent',stroke:afV115Line,label:'오른쪽 바깥 귀',layer:10,required:true},
+{x:40.5,y:38.5,w:10,h:20.5,fill:'transparent',stroke:afV115SoftLine,label:'왼쪽 안쪽 귀',layer:20,required:true},
+{x:59.5,y:38.5,w:10,h:20.5,fill:'transparent',stroke:afV115SoftLine,label:'오른쪽 안쪽 귀',layer:20,required:true},
+{x:50,y:63,w:55,h:29.5,fill:'transparent',stroke:afV115Line,label:'얼굴',layer:30,required:true},
+{x:43.5,y:60.5,w:5.3,h:4,fill:'transparent',stroke:afV115Line,label:'왼쪽 눈',layer:40,required:true},
+{x:56.5,y:60.5,w:5.3,h:4,fill:'transparent',stroke:afV115Line,label:'오른쪽 눈',layer:40,required:true},
+{x:50,y:68.3,w:15.5,h:6.7,fill:'transparent',stroke:afV115Line,label:'입 주변',layer:45,required:true},
+{x:50,y:66.9,w:6.3,h:2.9,fill:'transparent',stroke:afV115Line,label:'코',layer:50,required:true}
 ];
 guideSteps.bunny=[{label:'',indices:guides.bunny.map((_,i)=>i)}];
 
 function afV115BunnyVisualMarkup(){
 return '<svg class="af-v115-bunny-visual" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">'
-+'<defs><mask id="afV115BunnyEarMask"><rect x="0" y="0" width="100" height="100" fill="white"/><ellipse cx="50" cy="59.6802" rx="27.75" ry="16.9404" fill="black"/></mask></defs>'
++'<defs><mask id="afV115BunnyEarMask"><rect x="0" y="0" width="100" height="100" fill="white"/><ellipse cx="50" cy="63" rx="27.5" ry="14.75" fill="black"/></mask></defs>'
 +'<g class="af-v115-bunny-ear-lines" mask="url(#afV115BunnyEarMask)">'
-+'<ellipse cx="40.3198" cy="38.3837" rx="10.3256" ry="15.0044"/>'
-+'<ellipse cx="59.6802" cy="38.3837" rx="10.3256" ry="15.0044"/>'
-+'<ellipse class="af-v115-bunny-inner" cx="40.3198" cy="39.3517" rx="5.1628" ry="10.1643"/>'
-+'<ellipse class="af-v115-bunny-inner" cx="59.6802" cy="39.3517" rx="5.1628" ry="10.1643"/>'
++'<ellipse cx="40.5" cy="36.8" rx="10.25" ry="15.25" fill="none" stroke="rgba(70,105,145,.26)" stroke-width="1.05"/>'
++'<ellipse cx="59.5" cy="36.8" rx="10.25" ry="15.25" fill="none" stroke="rgba(70,105,145,.26)" stroke-width="1.05"/>'
++'<ellipse class="af-v115-bunny-inner" cx="40.5" cy="38.5" rx="5" ry="10.25" fill="none" stroke="rgba(70,105,145,.20)" stroke-width="1.05"/>'
++'<ellipse class="af-v115-bunny-inner" cx="59.5" cy="38.5" rx="5" ry="10.25" fill="none" stroke="rgba(70,105,145,.20)" stroke-width="1.05"/>'
 +'</g>'
-+'<ellipse cx="50" cy="59.6802" rx="27.75" ry="16.9404"/>'
-+'<ellipse cx="42.2558" cy="57.2602" rx="2.9041" ry="2.1781"/>'
-+'<ellipse cx="57.7442" cy="57.2602" rx="2.9041" ry="2.1781"/>'
-+'<ellipse cx="50" cy="64.5203" rx="7.7442" ry="3.8721"/>'
-+'<ellipse cx="50" cy="62.1003" rx="3.2268" ry="1.6457"/>'
++'<ellipse cx="50" cy="63" rx="27.5" ry="14.75" fill="none" stroke="rgba(70,105,145,.26)" stroke-width="1.05"/>'
++'<ellipse cx="43.5" cy="60.5" rx="2.65" ry="2" fill="none" stroke="rgba(70,105,145,.26)" stroke-width="1.05"/>'
++'<ellipse cx="56.5" cy="60.5" rx="2.65" ry="2" fill="none" stroke="rgba(70,105,145,.26)" stroke-width="1.05"/>'
++'<ellipse cx="50" cy="68.3" rx="7.75" ry="3.35" fill="none" stroke="rgba(70,105,145,.26)" stroke-width="1.05"/>'
++'<ellipse cx="50" cy="66.9" rx="3.15" ry="1.45" fill="none" stroke="rgba(70,105,145,.26)" stroke-width="1.05"/>'
 +'</svg>';
 }
 
@@ -17173,4 +17181,522 @@ try{showGuide('bunny');styleSilhouetteGuide();}catch(e){}
 
 })();
 
+</script>
+
+<style id="af-ultimate-artboard-bunny-style">
+/* Keep every legacy bunny target available for snapping, but never render it. */
+#af-tutorial #afGuideOverlay[data-af-v98-animal="bunny"] .af-guide-shape,
+#af-tutorial #afGuideOverlay[data-af-v98-animal="bunny"] .af-v98-guide,
+#af-tutorial #afGuideOverlay[data-af-v98-animal="bunny"] .af-v115-bunny-target,
+#af-tutorial #afGuideOverlay[data-af-v98-animal="bunny"] .af-v115-bunny-visual,
+#af-tutorial #afGuideOverlay[data-af-v98-animal="bunny"] .af-final-bunny-guide {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  animation: none !important;
+  filter: none !important;
+  pointer-events: none !important;
+}
+
+#af-tutorial #afGuideOverlay .af-ultimate-bunny-guide {
+  position: absolute !important;
+  display: block !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  z-index: 7000 !important;
+}
+#af-tutorial #afGuideOverlay .af-ultimate-bunny-guide ellipse,
+#af-tutorial #afGuideOverlay .af-ultimate-bunny-guide circle {
+  fill: none !important;
+  stroke: rgba(70,105,145,.26) !important;
+  stroke-width: 1.05 !important;
+  vector-effect: non-scaling-stroke !important;
+  shape-rendering: geometricPrecision !important;
+}
+#af-tutorial #afGuideOverlay .af-ultimate-bunny-guide .af-ultimate-bunny-inner {
+  stroke: rgba(70,105,145,.20) !important;
+}
+
+/* A centered scroll surface: small artboards stay centered, large ones can scroll. */
+#af-tutorial .af-stage,
+#af-tutorial .af-stage.af-final-artboard-scroll {
+  position: relative !important;
+  overflow: auto !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+}
+#af-tutorial .af-stage .af-artboard-wrap,
+#af-tutorial .af-stage.af-final-artboard-scroll .af-artboard-wrap {
+  box-sizing: border-box !important;
+  width: max-content !important;
+  min-width: 100% !important;
+  height: max-content !important;
+  min-height: 100% !important;
+  margin: auto !important;
+  padding: 34px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+}
+
+/* Disable all older artboard transform UI. The new box has no rotate control. */
+#af-tutorial .af-artboard-transform-v51,
+#af-tutorial .af-artboard-transform,
+#afFinalArtboardPopover,
+#afArtboardPopoverV48,
+#af-tutorial .af-artboard-popover-v48 {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+#af-tutorial .af-ultimate-artboard-box {
+  position: absolute;
+  z-index: 8500;
+  border: 2px solid #18c7e6;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.8), 0 0 18px rgba(24,199,230,.2);
+  pointer-events: none;
+  display: none;
+}
+#af-tutorial.af-ultimate-artboard-selected .af-ultimate-artboard-box {
+  display: block;
+}
+#af-tutorial .af-ultimate-artboard-handle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #18c7e6;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 5px rgba(0,0,0,.22);
+  pointer-events: auto;
+  touch-action: none;
+}
+#af-tutorial .af-ultimate-artboard-handle[data-dir="nw"]{left:-8px;top:-8px;cursor:nwse-resize}
+#af-tutorial .af-ultimate-artboard-handle[data-dir="n"]{left:50%;top:-8px;transform:translateX(-50%);cursor:ns-resize}
+#af-tutorial .af-ultimate-artboard-handle[data-dir="ne"]{right:-8px;top:-8px;cursor:nesw-resize}
+#af-tutorial .af-ultimate-artboard-handle[data-dir="e"]{right:-8px;top:50%;transform:translateY(-50%);cursor:ew-resize}
+#af-tutorial .af-ultimate-artboard-handle[data-dir="se"]{right:-8px;bottom:-8px;cursor:nwse-resize}
+#af-tutorial .af-ultimate-artboard-handle[data-dir="s"]{left:50%;bottom:-8px;transform:translateX(-50%);cursor:ns-resize}
+#af-tutorial .af-ultimate-artboard-handle[data-dir="sw"]{left:-8px;bottom:-8px;cursor:nesw-resize}
+#af-tutorial .af-ultimate-artboard-handle[data-dir="w"]{left:-8px;top:50%;transform:translateY(-50%);cursor:ew-resize}
+
+#af-tutorial .af-ultimate-artboard-color-wrap {
+  position: absolute;
+  left: -2px;
+  top: -44px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 8px 4px 5px;
+  border-radius: 10px;
+  background: #202124;
+  color: #fff;
+  box-shadow: 0 7px 18px rgba(0,0,0,.24);
+  pointer-events: auto;
+  font-family: "LaundryGothic", sans-serif;
+  font-size: 12px;
+  white-space: nowrap;
+}
+#af-tutorial .af-ultimate-artboard-color {
+  width: 25px;
+  height: 25px;
+  padding: 1px;
+  border: 1px solid rgba(255,255,255,.75);
+  border-radius: 7px;
+  background: transparent;
+  cursor: pointer;
+}
+#af-tutorial .af-artboard-label.af-ultimate-artboard-name-selected,
+#af-tutorial .af-artboard-layer-v54.af-ultimate-artboard-layer-selected {
+  box-shadow: 0 0 0 2px #18c7e6, 0 0 15px rgba(24,199,230,.32) !important;
+}
+</style>
+<script id="af-ultimate-artboard-bunny-script">
+(function(){
+  'use strict';
+
+  const root = document.querySelector('#af-tutorial');
+  const art = document.querySelector('#afArtboard');
+  const overlay = document.querySelector('#afGuideOverlay');
+  const stage = root && root.querySelector('.af-stage');
+  if (!root || !art || !overlay || !stage) return;
+
+  /* ---------- Bunny guide: exact sample geometry, centered by its visible bounds ---------- */
+  const view = {x:15, y:9, w:90, h:114};
+  const bunnyGeometry = [
+    {cx:45, cy:42, rx:16, ry:31},
+    {cx:75, cy:42, rx:16, ry:31},
+    {cx:45, cy:44, rx:8, ry:21},
+    {cx:75, cy:44, rx:8, ry:21},
+    {cx:60, cy:86, rx:43, ry:35},
+    {cx:48, cy:81, rx:4.5, ry:4.5},
+    {cx:72, cy:81, rx:4.5, ry:4.5},
+    {cx:60, cy:95.4, rx:12, ry:8.4},
+    {cx:60, cy:93.1, rx:5, ry:3.4}
+  ];
+
+  function bunnyActive(){
+    return overlay.getAttribute('data-af-v98-animal') === 'bunny';
+  }
+
+  function makeBunny(){
+    const holder = document.createElement('div');
+    holder.innerHTML = '<svg class="af-ultimate-bunny-guide" viewBox="15 9 90 114" preserveAspectRatio="xMidYMid meet" aria-hidden="true">'
+      + '<defs><mask id="afUltimateBunnyEarMask"><rect x="0" y="0" width="120" height="150" fill="white"/><ellipse cx="60" cy="86" rx="43" ry="35" fill="black"/></mask></defs>'
+      + '<g mask="url(#afUltimateBunnyEarMask)">'
+      + '<ellipse cx="45" cy="42" rx="16" ry="31"/>'
+      + '<ellipse cx="75" cy="42" rx="16" ry="31"/>'
+      + '<ellipse class="af-ultimate-bunny-inner" cx="45" cy="44" rx="8" ry="21"/>'
+      + '<ellipse class="af-ultimate-bunny-inner" cx="75" cy="44" rx="8" ry="21"/>'
+      + '</g>'
+      + '<ellipse cx="60" cy="86" rx="43" ry="35"/>'
+      + '<circle cx="48" cy="81" r="4.5"/>'
+      + '<circle cx="72" cy="81" r="4.5"/>'
+      + '<ellipse cx="60" cy="95.4" rx="12" ry="8.4"/>'
+      + '<ellipse cx="60" cy="93.1" rx="5" ry="3.4"/>'
+      + '</svg>';
+    return holder.firstElementChild;
+  }
+
+  function ensureBunny(){
+    if (!bunnyActive()) return null;
+    let svg = overlay.querySelector('.af-ultimate-bunny-guide');
+    if (!svg) {
+      svg = makeBunny();
+      const sample = overlay.querySelector('.af-character-sample');
+      if (sample) overlay.insertBefore(svg, sample);
+      else overlay.appendChild(svg);
+    }
+    return svg;
+  }
+
+  function layoutBunny(){
+    if (!bunnyActive()) return;
+    const svg = ensureBunny();
+    if (!svg) return;
+    const artW = art.clientWidth;
+    const artH = art.clientHeight;
+    if (!artW || !artH) return;
+
+    /* Same scale in both axes. The visible bunny box itself is centered exactly. */
+    const scale = Math.min((artW * 0.60) / view.w, (artH * 0.62) / view.h);
+    const boxW = view.w * scale;
+    const boxH = view.h * scale;
+    const left = (artW - boxW) / 2;
+    const top = (artH - boxH) / 2;
+
+    /* Reset the unused edges first. Setting the inset shorthand after left/top
+       would erase those coordinates and push the guide to its static position. */
+    svg.style.setProperty('inset', 'auto', 'important');
+    svg.style.setProperty('right', 'auto', 'important');
+    svg.style.setProperty('bottom', 'auto', 'important');
+    svg.style.setProperty('left', left + 'px', 'important');
+    svg.style.setProperty('top', top + 'px', 'important');
+    svg.style.setProperty('width', boxW + 'px', 'important');
+    svg.style.setProperty('height', boxH + 'px', 'important');
+
+    const targets = Array.from(overlay.querySelectorAll('.af-guide-shape'));
+    bunnyGeometry.forEach(function(g, index){
+      const target = targets[index];
+      if (!target) return;
+      target.style.setProperty('left', (left + (g.cx - g.rx - view.x) * scale) + 'px', 'important');
+      target.style.setProperty('top', (top + (g.cy - g.ry - view.y) * scale) + 'px', 'important');
+      target.style.setProperty('width', (g.rx * 2 * scale) + 'px', 'important');
+      target.style.setProperty('height', (g.ry * 2 * scale) + 'px', 'important');
+      target.style.setProperty('display', 'block', 'important');
+      target.style.setProperty('visibility', 'hidden', 'important');
+      target.style.setProperty('opacity', '0', 'important');
+      target.style.setProperty('pointer-events', 'none', 'important');
+    });
+  }
+
+  let queued = false;
+  function queueAll(){
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(function(){
+      queued = false;
+      layoutBunny();
+      positionArtboardBox();
+    });
+  }
+
+  const guideObserver = new MutationObserver(queueAll);
+  guideObserver.observe(overlay, {childList:true, subtree:true, attributes:true});
+
+  /* ---------- Artboard selection and shape-like resizing ---------- */
+  let selected = false;
+  let box = null;
+  let colorInput = null;
+
+  function colorToHex(value){
+    const text = String(value || '');
+    if (/^#[0-9a-f]{6}$/i.test(text)) return text;
+    const match = text.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);
+    if (!match) return '#ffffff';
+    return '#' + [match[1], match[2], match[3]].map(function(v){
+      return Number(v).toString(16).padStart(2, '0');
+    }).join('');
+  }
+
+  function updateArtboardThumb(color){
+    root.querySelectorAll('.af-artboard-thumb-v54').forEach(function(thumb){
+      thumb.style.background = color;
+    });
+  }
+
+  function applyArtboardColor(color){
+    art.dataset.artboardColor = color;
+    art.style.setProperty('background', color, 'important');
+    updateArtboardThumb(color);
+    if (colorInput && color !== 'transparent') colorInput.value = colorToHex(color);
+  }
+
+  function createBox(){
+    if (box) return box;
+    box = document.createElement('div');
+    box.className = 'af-ultimate-artboard-box';
+    ['nw','n','ne','e','se','s','sw','w'].forEach(function(dir){
+      const handle = document.createElement('i');
+      handle.className = 'af-ultimate-artboard-handle';
+      handle.dataset.dir = dir;
+      box.appendChild(handle);
+    });
+    const colorWrap = document.createElement('label');
+    colorWrap.className = 'af-ultimate-artboard-color-wrap';
+    colorWrap.innerHTML = '<input class="af-ultimate-artboard-color" type="color" title="아트보드 배경색"><span>배경색</span>';
+    box.appendChild(colorWrap);
+    colorInput = colorWrap.querySelector('input');
+    colorInput.value = colorToHex(getComputedStyle(art).backgroundColor);
+    colorInput.addEventListener('input', function(event){
+      event.stopPropagation();
+      applyArtboardColor(colorInput.value);
+    });
+    stage.appendChild(box);
+    bindHandles();
+    return box;
+  }
+
+  function positionArtboardBox(){
+    if (!selected) return;
+    createBox();
+    const sr = stage.getBoundingClientRect();
+    const ar = art.getBoundingClientRect();
+    const left = ar.left - sr.left + stage.scrollLeft;
+    const top = ar.top - sr.top + stage.scrollTop;
+    box.style.left = left + 'px';
+    box.style.top = top + 'px';
+    box.style.width = ar.width + 'px';
+    box.style.height = ar.height + 'px';
+  }
+
+  function hideLegacyPopovers(){
+    ['#afFinalArtboardPopover','#afArtboardPopoverV48'].forEach(function(sel){
+      const el = document.querySelector(sel);
+      if (el) {
+        el.classList.remove('show');
+        el.style.setProperty('display','none','important');
+      }
+    });
+  }
+
+  function activateArtboard(){
+    selected = true;
+    root.classList.add('af-ultimate-artboard-selected');
+    root.querySelectorAll('.af-artboard-label').forEach(function(el){el.classList.add('af-ultimate-artboard-name-selected');});
+    root.querySelectorAll('.af-artboard-layer-v54').forEach(function(el){el.classList.add('af-ultimate-artboard-layer-selected');});
+    createBox();
+    colorInput.value = colorToHex(getComputedStyle(art).backgroundColor);
+    hideLegacyPopovers();
+    queueAll();
+  }
+
+  function deactivateArtboard(){
+    selected = false;
+    root.classList.remove('af-ultimate-artboard-selected');
+    root.querySelectorAll('.af-artboard-label').forEach(function(el){el.classList.remove('af-ultimate-artboard-name-selected');});
+    root.querySelectorAll('.af-artboard-layer-v54').forEach(function(el){el.classList.remove('af-ultimate-artboard-layer-selected');});
+  }
+
+  function setArtboardSize(width, height){
+    width = Math.max(220, Math.min(1800, Math.round(width)));
+    height = Math.max(220, Math.min(1800, Math.round(height)));
+    art.dataset.afUserSized = '1';
+    art.dataset.artboardWidth = String(width);
+    art.dataset.artboardHeight = String(height);
+    art.style.setProperty('width', width + 'px', 'important');
+    art.style.setProperty('height', height + 'px', 'important');
+    art.style.setProperty('min-width', width + 'px', 'important');
+    art.style.setProperty('min-height', height + 'px', 'important');
+    art.style.setProperty('max-width', 'none', 'important');
+    art.style.setProperty('max-height', 'none', 'important');
+    art.style.setProperty('aspect-ratio', 'auto', 'important');
+    art.style.setProperty('flex', '0 0 auto', 'important');
+    queueAll();
+  }
+
+  function bindHandles(){
+    box.querySelectorAll('.af-ultimate-artboard-handle').forEach(function(handle){
+      handle.addEventListener('pointerdown', function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        const dir = handle.dataset.dir;
+        const startX = event.clientX;
+        const startY = event.clientY;
+        const startW = art.getBoundingClientRect().width;
+        const startH = art.getBoundingClientRect().height;
+        handle.setPointerCapture(event.pointerId);
+
+        function move(ev){
+          const dx = ev.clientX - startX;
+          const dy = ev.clientY - startY;
+          let width = startW;
+          let height = startH;
+          if (dir.includes('e')) width = startW + dx;
+          if (dir.includes('w')) width = startW - dx;
+          if (dir.includes('s')) height = startH + dy;
+          if (dir.includes('n')) height = startH - dy;
+          setArtboardSize(width, height);
+        }
+        function end(ev){
+          handle.removeEventListener('pointermove', move);
+          handle.removeEventListener('pointerup', end);
+          handle.removeEventListener('pointercancel', end);
+          try{ handle.releasePointerCapture(ev.pointerId); }catch(e){}
+          queueAll();
+        }
+        handle.addEventListener('pointermove', move);
+        handle.addEventListener('pointerup', end);
+        handle.addEventListener('pointercancel', end);
+      }, true);
+    });
+  }
+
+  /* Name or Artboard layer activates the resize box. No other click can activate it. */
+  document.addEventListener('click', function(event){
+    const trigger = event.target.closest && event.target.closest('#af-tutorial .af-artboard-label, #af-tutorial .af-artboard-layer-v54');
+    if (trigger) {
+      activateArtboard();
+      hideLegacyPopovers();
+      return;
+    }
+    if (!selected) return;
+    if (event.target.closest && event.target.closest('#af-tutorial .af-ultimate-artboard-box, #af-tutorial #afArtboard, #af-tutorial #afColourPanel')) return;
+    if (event.target.closest && event.target.closest('#af-tutorial .af-object, #af-tutorial .af-tool, #af-tutorial .af-shape-menu')) deactivateArtboard();
+  }, false);
+
+  /* Use the existing Colour panel as an additional artboard background control. */
+  const hexText = root.querySelector('#afHexText');
+  if (hexText) {
+    const hexObserver = new MutationObserver(function(){
+      if (!selected) return;
+      const value = String(hexText.textContent || '').trim().replace(/^#/, '');
+      if (/^[0-9a-f]{6}$/i.test(value)) applyArtboardColor('#' + value);
+    });
+    hexObserver.observe(hexText, {childList:true, characterData:true, subtree:true});
+  }
+  const noColor = root.querySelector('#afNoColor');
+  if (noColor) noColor.addEventListener('click', function(){ if (selected) applyArtboardColor('transparent'); });
+
+  stage.addEventListener('scroll', queueAll, {passive:true});
+  window.addEventListener('resize', queueAll, true);
+  if (typeof ResizeObserver === 'function') {
+    const ro = new ResizeObserver(queueAll);
+    ro.observe(art);
+    ro.observe(stage);
+  }
+
+  queueAll();
+  setTimeout(queueAll, 120);
+  setTimeout(queueAll, 500);
+})();
+</script>
+
+
+<script>
+/* AF puppy silhouette proportion fix */
+(function(){
+  if (typeof art==='undefined' || typeof guides==='undefined') return;
+
+  const oldPercentRect = typeof percentRect === 'function' ? percentRect : null;
+
+  guides.puppy = [
+    {x:28.3333,y:38.6667,w:31.5221,h:39.2437,fill:"transparent",stroke:"rgba(96,165,250,.96)",label:"왼쪽 귀",layer:10,required:true},
+    {x:71.6667,y:38.6667,w:31.5221,h:39.2437,fill:"transparent",stroke:"rgba(96,165,250,.96)",label:"오른쪽 귀",layer:10,required:true},
+    {x:50,y:56,w:70,h:48,fill:"transparent",stroke:"rgba(96,165,250,.96)",label:"얼굴",layer:20,required:true},
+    {x:40.8333,y:52,w:8.3333,h:6.6667,fill:"transparent",stroke:"rgba(107,114,128,.82)",label:"왼쪽 눈",layer:30,required:true},
+    {x:59.1667,y:52,w:8.3333,h:6.6667,fill:"transparent",stroke:"rgba(107,114,128,.82)",label:"오른쪽 눈",layer:30,required:true},
+    {x:50,y:64.6667,w:26.6667,h:14.6667,fill:"transparent",stroke:"rgba(107,114,128,.82)",label:"입 주변",layer:30,required:true},
+    {x:50,y:60.6667,w:11.6667,h:6,fill:"transparent",stroke:"rgba(107,114,128,.82)",label:"코",layer:40,required:true}
+  ];
+  guideSteps.puppy = [{label:"",indices:guides.puppy.map((_,i)=>i)}];
+
+  function guideFrame(animal){
+    if (!art) return null;
+    const aw = art.clientWidth || 0;
+    const ah = art.clientHeight || 0;
+    if (!aw || !ah) return null;
+
+    const spec = {
+      bunny:{viewW:120, viewH:150, fit:0.62},
+      puppy:{viewW:120, viewH:150, fit:0.62},
+      bear:{viewW:120, viewH:150, fit:0.62}
+    }[animal || currentGuideAnimal] || {viewW:120, viewH:150, fit:0.62};
+
+    const aspect = spec.viewW / spec.viewH;
+    const maxW = aw * spec.fit;
+    const maxH = ah * spec.fit;
+    let width = maxW;
+    let height = width / aspect;
+    if (height > maxH){
+      height = maxH;
+      width = height * aspect;
+    }
+    const left = (aw - width) / 2;
+    const top = (ah - height) / 2;
+    return {left, top, width, height, aspect};
+  }
+
+  percentRect = function(g, i){
+    const animal = (typeof m==='function' && m() && m().type==='silhouette' && m().animal) || currentGuideAnimal;
+    if (animal && guideFrame(animal)){
+      const frame = guideFrame(animal);
+      const w = frame.width * (g.w / 100);
+      const h = frame.height * (g.h / 100);
+      const cx = frame.left + frame.width * (g.x / 100);
+      const cy = frame.top + frame.height * (g.y / 100);
+      return {index:i,left:cx-w/2,top:cy-h/2,width:w,height:h,cx,cy};
+    }
+    return oldPercentRect ? oldPercentRect(g, i) : {index:i,left:0,top:0,width:0,height:0,cx:0,cy:0};
+  };
+
+  if (typeof window.afV98RefreshGuide !== 'function') {
+    window.afV98RefreshGuide = function(){
+      const animal = currentGuideAnimal || ((typeof m==='function' && m() && m().type==='silhouette') ? m().animal : '');
+      if (!animal || typeof showGuide !== 'function') return;
+      showGuide(animal);
+      if (typeof updateGuideState === 'function') updateGuideState();
+    };
+  }
+
+  const rerender = () => {
+    if (!currentGuideAnimal && !(typeof m==='function' && m() && m().type==='silhouette')) return;
+    try { window.afV98RefreshGuide(); } catch (e) {}
+  };
+  window.addEventListener('resize', rerender, true);
+  if (typeof ResizeObserver === 'function'){
+    const ro = new ResizeObserver(rerender);
+    ro.observe(art);
+  }
+  setTimeout(rerender, 60);
+  setTimeout(rerender, 260);
+})();
 </script>
