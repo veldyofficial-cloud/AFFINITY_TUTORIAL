@@ -16053,52 +16053,52 @@ say=function(txt,force){if(force||Date.now()>=lock)return say0(txt||'');};
 showCoach=hideCoach=()=>{};
 function burst(c,b){
 try{
-const colors=['#F4C16D','#86C8EE','#EE91B1','#B9A4E8','#93D9B4','#F0A980','#D79AC9','#F5DE8E'];
-const origins=[[-150,-22],[150,-18],[-72,34],[72,38],[0,-62]];
+const colors=['#FFE07D','#9BE4FF','#FFAAC8','#D3BEFF','#A8EDC8','#FFC09A','#EAB3E1','#FFF0A6','#B9D6FF'];
+const origins=[[-205,-30],[205,-28],[-128,48],[128,50],[0,-108],[-252,12],[252,14]];
 document.querySelectorAll('.af-fw,.af-fw-ring').forEach(e=>e.remove());
-const total=Math.max(42,Math.round(c*.58));
+const total=Math.max(68,Math.round(c*.78));
 for(let j=0;j<total;j++){
 const f=document.createElement('i');
 const oi=j%origins.length;
 const o=origins[oi];
 const local=(j-oi)/origins.length;
-const q=(Math.PI*2*(local/Math.max(1,total/origins.length)))+((oi-2)*.10)+(Math.random()-.5)*.22;
-const power=b*(.82+Math.random()*1.42);
-const type=j%5===0?'star':(j%2===0?'bar':'spark');
+const q=(Math.PI*2*(local/Math.max(1,total/origins.length)))+((oi-3)*.08)+(Math.random()-.5)*.28;
+const power=b*(1.02+Math.random()*1.58);
+const type=j%4===0?'star':(j%2===0?'bar':'spark');
 f.className='af-fw '+type;
 f.style.setProperty('--ox',o[0]+'px');
 f.style.setProperty('--oy',o[1]+'px');
 f.style.setProperty('--x',Math.cos(q)*power+'px');
 f.style.setProperty('--y',Math.sin(q)*power+'px');
-f.style.setProperty('--mx',Math.cos(q)*power*.34+'px');
-f.style.setProperty('--my',Math.sin(q)*power*.34+'px');
+f.style.setProperty('--mx',Math.cos(q)*power*.30+'px');
+f.style.setProperty('--my',Math.sin(q)*power*.30+'px');
 f.style.setProperty('--r',(Math.round(q*180/Math.PI)+90)+'deg');
 f.style.setProperty('--c',colors[(j+oi)%colors.length]);
-f.style.setProperty('--s',(5.5+Math.random()*8.5).toFixed(1)+'px');
-f.style.setProperty('--d',(Math.random()*.075+oi*.012).toFixed(3)+'s');
-f.style.setProperty('--dur',(.78+Math.random()*.38).toFixed(3)+'s');
+f.style.setProperty('--s',(7+Math.random()*10.5).toFixed(1)+'px');
+f.style.setProperty('--d',(Math.random()*.09+oi*.010).toFixed(3)+'s');
+f.style.setProperty('--dur',(.82+Math.random()*.42).toFixed(3)+'s');
 document.body.appendChild(f);
-setTimeout(()=>f.remove(),1550);
+setTimeout(()=>f.remove(),1700);
 }
-// A second, very short outward snap makes the explosion feel like a real "pop" without circular rings.
-for(let k=0;k<18;k++){
+// Strong central pop made only from individual particles, so no rectangular compositing layer appears.
+for(let k=0;k<28;k++){
 const f=document.createElement('i');
-const q=(Math.PI*2*k/18)+(Math.random()-.5)*.12;
-const power=b*(.42+Math.random()*.34);
+const q=(Math.PI*2*k/28)+(Math.random()-.5)*.14;
+const power=b*(.54+Math.random()*.48);
 f.className='af-fw flash '+(k%3===0?'star':'bar');
 f.style.setProperty('--ox','0px');
 f.style.setProperty('--oy','0px');
 f.style.setProperty('--x',Math.cos(q)*power+'px');
 f.style.setProperty('--y',Math.sin(q)*power+'px');
-f.style.setProperty('--mx',Math.cos(q)*power*.18+'px');
-f.style.setProperty('--my',Math.sin(q)*power*.18+'px');
+f.style.setProperty('--mx',Math.cos(q)*power*.20+'px');
+f.style.setProperty('--my',Math.sin(q)*power*.20+'px');
 f.style.setProperty('--r',(Math.round(q*180/Math.PI)+90)+'deg');
 f.style.setProperty('--c',colors[k%colors.length]);
-f.style.setProperty('--s',(7+Math.random()*8).toFixed(1)+'px');
-f.style.setProperty('--d',(Math.random()*.035).toFixed(3)+'s');
-f.style.setProperty('--dur',(.48+Math.random()*.18).toFixed(3)+'s');
+f.style.setProperty('--s',(9+Math.random()*10).toFixed(1)+'px');
+f.style.setProperty('--d',(Math.random()*.045).toFixed(3)+'s');
+f.style.setProperty('--dur',(.52+Math.random()*.22).toFixed(3)+'s');
 document.body.appendChild(f);
-setTimeout(()=>f.remove(),1000);
+setTimeout(()=>f.remove(),1100);
 }
 }catch(e){}
 }
@@ -18248,5 +18248,50 @@ html .af-text-shard{
   0%{opacity:1;transform:translate3d(0,0,0) scale3d(1,1,1) rotate(0deg)}
   14%{opacity:1;transform:translate3d(0,0,0) scale3d(1.08,1.08,1) rotate(0deg)}
   100%{opacity:0;transform:translate3d(var(--exit-x,0px),var(--exit-y,0px),0) scale3d(.10,.10,1) rotate(var(--exit-r,0deg))}
+}
+</style>
+
+<style id="afPraiseBrightnessBurstFinal">
+/* Brighter praise lettering and larger particle-only burst. */
+html .af-praise-letter,
+html #af-tutorial .af-praise-letter{
+  color:hsl(var(--h),84%,76%)!important;
+  background:linear-gradient(180deg,
+    hsl(var(--h),94%,98%) 0%,
+    hsl(var(--h),90%,91%) 24%,
+    hsl(var(--h),87%,82%) 56%,
+    hsl(var(--h),81%,70%) 100%)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;
+  text-shadow:
+    0 1px 0 hsl(var(--h),74%,67%),
+    0 2px 0 hsl(var(--h),73%,64%),
+    0 3px 0 hsl(var(--h),72%,61%),
+    0 4px 0 hsl(var(--h),71%,58%),
+    0 5px 0 hsl(var(--h),70%,55%),
+    0 6px 0 hsl(var(--h),69%,52%),
+    0 8px 4px rgba(15,23,42,.16),
+    0 13px 11px rgba(15,23,42,.11),
+    0 0 20px hsla(var(--h),94%,84%,.68),
+    0 0 40px hsla(var(--h),90%,80%,.38)!important;
+  filter:brightness(1.10) saturate(1.06) drop-shadow(0 5px 1px rgba(15,23,42,.09))!important;
+}
+html .af-fw,
+html #af-tutorial .af-fw{
+  box-shadow:0 0 6px var(--c),0 0 14px var(--c),0 0 25px color-mix(in srgb,var(--c) 72%,transparent)!important;
+  filter:saturate(1.08) brightness(1.13)!important;
+}
+html .af-fw.flash,
+html #af-tutorial .af-fw.flash{
+  box-shadow:0 0 9px var(--c),0 0 22px var(--c),0 0 38px color-mix(in srgb,var(--c) 78%,transparent)!important;
+  filter:saturate(1.12) brightness(1.20)!important;
+}
+html .af-final-win::before,
+html .af-final-win::after,
+html #af-tutorial .af-final-win::before,
+html #af-tutorial .af-final-win::after{
+  content:none!important;
+  display:none!important;
 }
 </style>
