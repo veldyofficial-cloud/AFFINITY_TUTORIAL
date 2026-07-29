@@ -4074,15 +4074,15 @@ statusText.textContent="파란 테두리 근처에 대략 맞춰도 인식돼요
 
 
 guides.bunny = [
-{x:38.8,y:22.5,w:17.2,h:31.5,fill:"transparent",stroke:"rgba(96,165,250,.96)",label:"왼쪽 바깥 귀",layer:10,required:true},
-{x:61.2,y:22.5,w:17.2,h:31.5,fill:"transparent",stroke:"rgba(96,165,250,.96)",label:"오른쪽 바깥 귀",layer:10,required:true},
-{x:38.8,y:25.2,w:8.2,h:21.6,fill:"transparent",stroke:"rgba(107,114,128,.88)",label:"왼쪽 안쪽 귀",layer:30,required:true},
-{x:61.2,y:25.2,w:8.2,h:21.6,fill:"transparent",stroke:"rgba(107,114,128,.88)",label:"오른쪽 안쪽 귀",layer:30,required:true},
-{x:50,y:55.2,w:55.5,h:43.8,fill:"transparent",stroke:"rgba(96,165,250,.96)",label:"얼굴",layer:20,required:true},
-{x:46.3,y:55.7,w:5.4,h:5.4,fill:"transparent",stroke:"rgba(75,85,99,.86)",label:"왼쪽 눈",layer:60,required:true},
-{x:53.7,y:55.7,w:5.4,h:5.4,fill:"transparent",stroke:"rgba(75,85,99,.86)",label:"오른쪽 눈",layer:60,required:true},
-{x:50,y:61.5,w:4.8,h:3.2,fill:"transparent",stroke:"rgba(75,85,99,.86)",label:"코",layer:70,required:true},
-{x:50,y:67.2,w:14.4,h:5.4,fill:"transparent",stroke:"rgba(75,85,99,.78)",label:"입",layer:65,required:true}
+{x:37.5,y:28,w:26.6667,h:41.3333,fill:"transparent",stroke:"rgba(96,165,250,.96)",label:"왼쪽 바깥 귀",layer:10,required:true},
+{x:62.5,y:28,w:26.6667,h:41.3333,fill:"transparent",stroke:"rgba(96,165,250,.96)",label:"오른쪽 바깥 귀",layer:10,required:true},
+{x:37.5,y:29.3333,w:13.3333,h:28,fill:"transparent",stroke:"rgba(107,114,128,.88)",label:"왼쪽 안쪽 귀",layer:30,required:true},
+{x:62.5,y:29.3333,w:13.3333,h:28,fill:"transparent",stroke:"rgba(107,114,128,.88)",label:"오른쪽 안쪽 귀",layer:30,required:true},
+{x:50,y:57.3333,w:71.6667,h:46.6667,fill:"transparent",stroke:"rgba(96,165,250,.96)",label:"얼굴",layer:20,required:true},
+{x:40,y:54,w:7.5,h:6,fill:"transparent",stroke:"rgba(75,85,99,.86)",label:"왼쪽 눈",layer:60,required:true},
+{x:60,y:54,w:7.5,h:6,fill:"transparent",stroke:"rgba(75,85,99,.86)",label:"오른쪽 눈",layer:60,required:true},
+{x:50,y:60.6667,w:8.3333,h:4.5333,fill:"transparent",stroke:"rgba(75,85,99,.86)",label:"코",layer:70,required:true},
+{x:50,y:64,w:20,h:10.6667,fill:"transparent",stroke:"rgba(75,85,99,.78)",label:"입 주변",layer:65,required:true}
 ];
 
 ["bunny","puppy","bear"].forEach(animal=>{
@@ -5139,10 +5139,10 @@ document.addEventListener("pointerup",up);
 
 try{
 if(guides.bunny && guides.bunny[7]){
-guides.bunny[7].w=6.4;
-guides.bunny[7].h=4.6;
+guides.bunny[7].w=8.3333;
+guides.bunny[7].h=4.5333;
 guides.bunny[7].x=50;
-guides.bunny[7].y=61.6;
+guides.bunny[7].y=60.6667;
 }
 }catch(e){}
 
@@ -16266,29 +16266,29 @@ pointer-events:none;
 .af-praise-letter{
 display:inline-block;
 position:relative;
-color:hsl(var(--h),48%,81%);
+color:hsl(var(--h),48%,58%);
 background:linear-gradient(180deg,
-hsl(var(--h),62%,97%) 0%,
-hsl(var(--h),56%,91%) 27%,
-hsl(var(--h),49%,83%) 57%,
-hsl(var(--h),42%,72%) 100%);
+hsl(var(--h),50%,88%) 0%,
+hsl(var(--h),49%,69%) 27%,
+hsl(var(--h),48%,57%) 57%,
+hsl(var(--h),44%,41%) 100%);
 -webkit-background-clip:text;
 background-clip:text;
 -webkit-text-fill-color:transparent;
 -webkit-text-stroke:0 transparent;
 paint-order:fill;
 text-shadow:
-0 1px 0 hsl(var(--h),31%,65%),
-0 2px 0 hsl(var(--h),31%,62%),
-0 3px 0 hsl(var(--h),31%,59%),
-0 4px 0 hsl(var(--h),31%,56%),
-0 5px 0 hsl(var(--h),31%,53%),
-0 6px 0 hsl(var(--h),31%,50%),
-0 9px 4px rgba(15,23,42,.20),
-0 15px 13px rgba(15,23,42,.13),
-0 0 14px hsla(var(--h),48%,88%,.40),
-0 0 28px hsla(var(--h),48%,88%,.22);
-filter:saturate(.74) drop-shadow(0 5px 1px rgba(15,23,42,.12));
+0 1px 0 hsl(var(--h),41%,43%),
+0 2px 0 hsl(var(--h),41%,40%),
+0 3px 0 hsl(var(--h),41%,37%),
+0 4px 0 hsl(var(--h),41%,34%),
+0 5px 0 hsl(var(--h),41%,31%),
+0 6px 0 hsl(var(--h),41%,28%),
+0 9px 4px rgba(15,23,42,.30),
+0 15px 13px rgba(15,23,42,.22),
+0 0 15px hsla(var(--h),48%,62%,.62),
+0 0 30px hsla(var(--h),48%,62%,.36);
+filter:saturate(1) drop-shadow(0 5px 1px rgba(15,23,42,.16));
 transform-origin:50% 78%;
 transform-style:preserve-3d;
 backface-visibility:hidden;
@@ -16349,13 +16349,13 @@ animation:afFWRing .86s ease-out var(--d,0s) forwards;
 }
 
 @keyframes afPraisePop{
-0%{opacity:0;transform:translate(-50%,-50%) scale(.06) rotate(-10deg);filter:brightness(1.04) saturate(.72)}
-9%{opacity:1;transform:translate(-50%,-50%) scale(1.42) rotate(4deg);filter:brightness(1.15) saturate(.86)}
+0%{opacity:0;transform:translate(-50%,-50%) scale(.06) rotate(-10deg);filter:brightness(1) saturate(1)}
+9%{opacity:1;transform:translate(-50%,-50%) scale(1.42) rotate(4deg);filter:brightness(1) saturate(1)}
 20%{opacity:1;transform:translate(-50%,-50%) scale(.9) rotate(-2deg)}
 31%{opacity:1;transform:translate(-50%,-50%) scale(1.11) rotate(1deg)}
 43%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0deg)}
 72%{opacity:1;transform:translate(-50%,-52%) scale(1.04) rotate(0deg)}
-100%{opacity:0;transform:translate(-50%,-74%) scale(1.24) rotate(0deg);filter:brightness(1.04) saturate(.76)}
+100%{opacity:0;transform:translate(-50%,-74%) scale(1.24) rotate(0deg);filter:brightness(1) saturate(1)}
 }
 @keyframes afPraiseLetter{
 0%{transform:perspective(820px) translateY(38px) translateZ(-90px) scale(.15) rotate(-18deg) rotateX(-68deg) rotateY(-12deg)}
@@ -16364,8 +16364,8 @@ animation:afFWRing .86s ease-out var(--d,0s) forwards;
 100%{transform:perspective(820px) translateY(0) translateZ(0) scale(1) rotate(0deg) rotateX(0deg) rotateY(0deg)}
 }
 @keyframes afPraiseShimmer{
-from{filter:brightness(1) saturate(.72) drop-shadow(0 6px 2px rgba(15,23,42,.15))}
-to{filter:brightness(1.16) saturate(.84) drop-shadow(0 6px 2px rgba(15,23,42,.15))}
+from{filter:brightness(1) saturate(.96) drop-shadow(0 6px 2px rgba(15,23,42,.18))}
+to{filter:brightness(1) saturate(1.06) drop-shadow(0 6px 2px rgba(15,23,42,.18))}
 }
 @keyframes afPraiseRays{
 0%{opacity:0;transform:translate(-50%,-50%) scale(.08) rotate(-18deg)}
@@ -16777,6 +16777,7 @@ afV110RefreshControls();
 })();
 
 
+/* AF_V120_TEXT_SATURATION_50_BRIGHTNESS_0 */
 /* v119: faint silhouette guides + borderless soft-pastel 3D firework praise text */
 /* v114: high-DPI anti-aliased colour wheel renderer */
 (function(){
@@ -17054,6 +17055,119 @@ if(typeof ResizeObserver==='function'){
 window.addEventListener('resize',()=>requestAnimationFrame(afV114DrawWheel),true);
 requestAnimationFrame(afV114DrawWheel);
 setTimeout(afV114DrawWheel,120);
+})();
+
+
+/* AF_V115_BUNNY_SAMPLE_MATCH */
+(function(){
+const afV115Line='rgba(70,105,145,.26)';
+const afV115SoftLine='rgba(70,105,145,.20)';
+
+/*
+  The bunny guide now uses the exact proportions of the sample SVG.
+  Coordinates are mapped into the 3:4 artboard without stretching the face or ears.
+*/
+guides.bunny=[
+{x:40.3198,y:38.3837,w:20.6512,h:30.0087,fill:'transparent',stroke:afV115Line,label:'왼쪽 바깥 귀',layer:10,required:true},
+{x:59.6802,y:38.3837,w:20.6512,h:30.0087,fill:'transparent',stroke:afV115Line,label:'오른쪽 바깥 귀',layer:10,required:true},
+{x:40.3198,y:39.3517,w:10.3256,h:20.3285,fill:'transparent',stroke:afV115SoftLine,label:'왼쪽 안쪽 귀',layer:20,required:true},
+{x:59.6802,y:39.3517,w:10.3256,h:20.3285,fill:'transparent',stroke:afV115SoftLine,label:'오른쪽 안쪽 귀',layer:20,required:true},
+{x:50,y:59.6802,w:55.5,h:33.8808,fill:'transparent',stroke:afV115Line,label:'얼굴',layer:30,required:true},
+{x:42.2558,y:57.2602,w:5.8081,h:4.3561,fill:'transparent',stroke:afV115Line,label:'왼쪽 눈',layer:40,required:true},
+{x:57.7442,y:57.2602,w:5.8081,h:4.3561,fill:'transparent',stroke:afV115Line,label:'오른쪽 눈',layer:40,required:true},
+{x:50,y:64.5203,w:15.4884,h:7.7442,fill:'transparent',stroke:afV115Line,label:'입 주변',layer:45,required:true},
+{x:50,y:62.1003,w:6.4535,h:3.2913,fill:'transparent',stroke:afV115Line,label:'코',layer:50,required:true}
+];
+guideSteps.bunny=[{label:'',indices:guides.bunny.map((_,i)=>i)}];
+
+function afV115BunnyVisualMarkup(){
+return '<svg class="af-v115-bunny-visual" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">'
++'<defs><mask id="afV115BunnyEarMask"><rect x="0" y="0" width="100" height="100" fill="white"/><ellipse cx="50" cy="59.6802" rx="27.75" ry="16.9404" fill="black"/></mask></defs>'
++'<g class="af-v115-bunny-ear-lines" mask="url(#afV115BunnyEarMask)">'
++'<ellipse cx="40.3198" cy="38.3837" rx="10.3256" ry="15.0044"/>'
++'<ellipse cx="59.6802" cy="38.3837" rx="10.3256" ry="15.0044"/>'
++'<ellipse class="af-v115-bunny-inner" cx="40.3198" cy="39.3517" rx="5.1628" ry="10.1643"/>'
++'<ellipse class="af-v115-bunny-inner" cx="59.6802" cy="39.3517" rx="5.1628" ry="10.1643"/>'
++'</g>'
++'<ellipse cx="50" cy="59.6802" rx="27.75" ry="16.9404"/>'
++'<ellipse cx="42.2558" cy="57.2602" rx="2.9041" ry="2.1781"/>'
++'<ellipse cx="57.7442" cy="57.2602" rx="2.9041" ry="2.1781"/>'
++'<ellipse cx="50" cy="64.5203" rx="7.7442" ry="3.8721"/>'
++'<ellipse cx="50" cy="62.1003" rx="3.2268" ry="1.6457"/>'
++'</svg>';
+}
+
+function afV115EnsureBunnyVisual(){
+if(!guideOverlay||guideOverlay.dataset.afV98Animal!=='bunny')return;
+let visual=guideOverlay.querySelector('.af-v115-bunny-visual');
+if(!visual){
+const holder=document.createElement('div');
+holder.innerHTML=afV115BunnyVisualMarkup();
+visual=holder.firstElementChild;
+const sample=guideOverlay.querySelector('.af-character-sample');
+if(sample)guideOverlay.insertBefore(visual,sample);
+else guideOverlay.appendChild(visual);
+}
+Array.from(guideOverlay.querySelectorAll('.af-guide-shape')).forEach(el=>{
+el.classList.add('af-v115-bunny-target');
+el.style.setProperty('border','0 solid transparent','important');
+el.style.setProperty('border-color','transparent','important');
+el.style.setProperty('box-shadow','none','important');
+el.style.setProperty('background','transparent','important');
+});
+}
+
+const afV115ShowGuideBefore=showGuide;
+showGuide=function(animal){
+const result=afV115ShowGuideBefore.apply(this,arguments);
+if(animal==='bunny')afV115EnsureBunnyVisual();
+return result;
+};
+
+const afV115StyleGuideBefore=styleSilhouetteGuide;
+styleSilhouetteGuide=function(){
+const result=afV115StyleGuideBefore.apply(this,arguments);
+afV115EnsureBunnyVisual();
+return result;
+};
+
+const afV115Style=document.createElement('style');
+afV115Style.id='afV115BunnyStyle';
+afV115Style.textContent=`
+#af-tutorial #afGuideOverlay .af-v115-bunny-visual{
+position:absolute!important;
+inset:0!important;
+width:100%!important;
+height:100%!important;
+display:block!important;
+overflow:visible!important;
+pointer-events:none!important;
+z-index:7000!important;
+}
+#af-tutorial #afGuideOverlay .af-v115-bunny-visual ellipse{
+fill:none!important;
+stroke:rgba(70,105,145,.26)!important;
+stroke-width:1.05!important;
+vector-effect:non-scaling-stroke!important;
+shape-rendering:geometricPrecision!important;
+}
+#af-tutorial #afGuideOverlay .af-v115-bunny-visual .af-v115-bunny-inner{
+stroke:rgba(70,105,145,.20)!important;
+}
+#af-tutorial #afGuideOverlay .af-v115-bunny-target{
+border:0 solid transparent!important;
+border-color:transparent!important;
+box-shadow:none!important;
+background:transparent!important;
+animation:none!important;
+filter:none!important;
+}
+`;
+root.appendChild(afV115Style);
+
+if((guideOverlay&&guideOverlay.dataset.afV98Animal==='bunny')||currentGuideAnimal==='bunny'){
+try{showGuide('bunny');styleSilhouetteGuide();}catch(e){}
+}
 })();
 
 
